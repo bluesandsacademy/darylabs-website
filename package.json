@@ -1,0 +1,38 @@
+{
+  "name": "blue-stem-labs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@formbricks/js": "^4.2.1",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.93.1",
+    "@tanstack/react-query": "^5.90.20",
+    "@tanstack/react-query-devtools": "^5.91.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.24",
+    "googleapis": "^164.1.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.552.0",
+    "next": "15.5.5",
+    "nprogress": "^0.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-simple-maps": "^3.0.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.5",
+    "tailwindcss": "^4"
+  }
+}

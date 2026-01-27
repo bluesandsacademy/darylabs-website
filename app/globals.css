@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+@theme {
+  --color-primary: #0483e2;
+  --color-secondary: #02345a;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-jarkata);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: white) {
+  :root {
+    --background: #ededed;
+    --foreground: #0a0a0a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* 🌀 Hero Blob Shape + Animation */
+.clip-hero-blob {
+  clip-path: polygon(
+    72% 0%,
+    100% 50%,
+    95% 55%,
+    80% 90%,
+    50% 100%,
+    20% 90%,
+    0% 60%,
+    5% 25%,
+    30% 20%
+  );
+  animation: heroBlobMorph 10s ease-in-out infinite;
+}
+
+@keyframes heroBlobMorph {
+  0% {
+    clip-path: polygon(
+      72% 0%,
+      100% 20%,
+      95% 55%,
+      80% 90%,
+      50% 100%,
+      20% 90%,
+      0% 60%,
+      5% 25%,
+      30% 5%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      68% 3%,
+      98% 28%,
+      100% 60%,
+      82% 88%,
+      52% 100%,
+      18% 90%,
+      0% 62%,
+      6% 30%,
+      28% 8%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      72% 0%,
+      100% 20%,
+      95% 55%,
+      80% 90%,
+      50% 100%,
+      20% 90%,
+      0% 60%,
+      5% 25%,
+      30% 5%
+    );
+  }
+}
+/* Add this to your globals.css file */
+
+.contact-hero-clip {
+  width: 450px;
+  height: 450px;
+  clip-path: path(
+    "M 450,225 Q 450,100 350,50 Q 250,0 150,50 Q 50,100 50,225 Q 50,350 150,400 Q 250,450 350,400 Q 400,375 425,325 L 450,450 L 0,450 L 0,0 L 450,0 Z"
+  );
+}
+
+@media (max-width: 768px) {
+  .contact-hero-clip {
+    width: 350px;
+    height: 350px;
+    clip-path: path(
+      "M 350,175 Q 350,75 275,40 Q 200,5 125,40 Q 50,75 50,175 Q 50,275 125,310 Q 200,345 275,310 Q 312,288 331,253 L 350,350 L 0,350 L 0,0 L 350,0 Z"
+    );
+  }
+}
