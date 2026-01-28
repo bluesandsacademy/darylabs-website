@@ -10,8 +10,8 @@ export default function BecomePartnerCTA() {
       id: 1,
       icon: Mail,
       label: "Email",
-      value: "partnerships@bluesandstemlabs.org",
-      href: "mailto:partnerships@bluesandstemlabs.org",
+      value: "partnerships@darylabs.com",
+      href: "mailto:partnerships@darylabs.com",
     },
     {
       id: 2,
@@ -24,8 +24,8 @@ export default function BecomePartnerCTA() {
       id: 3,
       icon: Globe,
       label: "Website",
-      value: "https://www.bluesandstemlabs.com/",
-      href: "https://www.bluesandstemlabs.com/",
+      value: "https://www.darylabs.com/",
+      href: "https://www.darylabs.com/",
     },
   ];
 

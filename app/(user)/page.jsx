@@ -81,9 +81,9 @@ export default function Homepage() {
         <TeamSection />
       </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
+      {/* <Suspense fallback={<SectionSkeleton />}>
         <BlogSection />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<SectionSkeleton />}>
         <TestimonialsSection />

@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
   const effectiveDate = "25 October 2025";
   const controller =
     "Blue Stem Labs ('BSL'), 'I.umina a school in the classroom'";
-  const email = "hello@bluestemlabs.org";
+  const email = "hello@darylabs.com";
   const dpoEmail = "privacy@[your-domain]";
 
   const sections = [

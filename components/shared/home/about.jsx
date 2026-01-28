@@ -13,9 +13,8 @@ export default function VirtualLabsSection() {
             Virtual Science Labs Built for African Classrooms
           </h1>
           <p className="text-foreground/70 max-w-4xl mx-auto text-base leading-relaxed">
-            DaryLabs, developed by Blue Sands Academy Limited, delivers
-            curriculum-aligned Physics, Chemistry, and Biology experiments to
-            students and teachers across Africa.
+            DaryLabs delivers curriculum-aligned Physics, Chemistry, and Biology
+            experiments to students and teachers across Africa.
           </p>
         </div>
 

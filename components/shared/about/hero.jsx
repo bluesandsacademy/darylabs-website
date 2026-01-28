@@ -81,9 +81,9 @@ const AboutHero = () => {
                 className="text-sm sm:text-base text-white/90 max-w-2xl leading-relaxed"
                 style={{ fontFamily: "var(--font-jarkata)" }}
               >
-                Blue Sands Academy is a forward-thinking EdTech and STEM
-                innovation company redefining how science and technology
-                education is experienced in Africa
+                DaryLabs is a forward-thinking EdTech and STEM innovation
+                company redefining how science and technology education is
+                experienced in Africa
               </p>
             </motion.div>
           </div>

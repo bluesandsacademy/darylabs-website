@@ -11,11 +11,11 @@ const PricingSection = () => {
     const fetchExchangeRate = async () => {
       try {
         const response = await fetch(
-          "https://v6.exchangerate-api.com/v6/892a9ad526f14e1e8f7652e0/latest/USD"
+          "https://v6.exchangerate-api.com/v6/892a9ad526f14e1e8f7652e0/latest/USD",
         );
         const data = await response.json();
-        if (data.conversion_rates?.NGN)
-          setExchangeRate(data.conversion_rates.NGN);
+        if (data.conversion_rates?.UGX)
+          setExchangeRate(data.conversion_rates.UGX);
       } catch (error) {
         console.error("Failed to fetch exchange rate:", error);
       }
@@ -86,7 +86,7 @@ const PricingSection = () => {
     if (usdPrice === null) return "Custom";
     return currency === "dollar"
       ? `$${usdPrice}`
-      : `₦${Math.round(usdPrice * exchangeRate).toLocaleString()}`;
+      : `Ush${Math.round(usdPrice * exchangeRate).toLocaleString()}`;
   };
 
   return (
@@ -156,7 +156,7 @@ const PricingSection = () => {
                 currency === "naira" ? "text-secondary" : "text-gray-400"
               }`}
             >
-              NGN
+              UGX
             </span>
           </motion.div>
         </div>
@@ -255,8 +255,8 @@ const PricingSection = () => {
                     plan.buttonStyle === "white"
                       ? "bg-white text-primary hover:bg-secondary hover:text-white"
                       : plan.popular
-                      ? "bg-white text-primary hover:bg-gray-50"
-                      : "bg-primary text-white hover:bg-secondary"
+                        ? "bg-white text-primary hover:bg-gray-50"
+                        : "bg-primary text-white hover:bg-secondary"
                   }`}
                 >
                   {plan.buttonText}

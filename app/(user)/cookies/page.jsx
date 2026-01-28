@@ -8,7 +8,7 @@ import HeroCTA from "@/components/legal";
 
 export default function CookiesPolicy() {
   const effectiveDate = "26 October 2025";
-  const contactEmail = "legal@bluesandsacademy.org";
+  const contactEmail = "legal@darylabs.com";
 
   const sections = [
     {

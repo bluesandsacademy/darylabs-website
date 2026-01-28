@@ -30,7 +30,7 @@ export const metadata = {
     title: "Virtual Lab Simulations | DaryLabs",
     description:
       "Access 150+ interactive virtual science simulations designed for African schools. Explore Biology, Chemistry, and Physics experiments with offline capability and mobile-first design.",
-    url: "https://bluesandstemlabs.com/simulations",
+    url: "https://darylabs.com/simulations",
     siteName: "DaryLabs",
 
     locale: "en_NG",
@@ -48,7 +48,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "https://bluesandstemlabs.com/simulations",
+    canonical: "https://darylabs.com/simulations",
   },
   category: "Education Technology",
 };

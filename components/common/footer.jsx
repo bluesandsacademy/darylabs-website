@@ -19,7 +19,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "LinkedIn", href: "#" },
-    { name: "Instagram", href: "https://www.instagram.com/bluesandstemlabs" },
+    { name: "Instagram", href: "https://www.instagram.com/darylabs" },
     { name: "Twitter", href: "#" },
     { name: "Facebook", href: "#" },
     { name: "Tiktok", href: "#" },

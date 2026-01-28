@@ -17,13 +17,13 @@ const navLinks = [
   { name: "Pricing", href: "/pricing" },
   { name: "Partnership", href: "/partnerships" },
 
-  {
-    name: "Insights",
-    dropdown: [
-      { name: "Blog", href: "/blog" },
-      // Future: { name: "Case Studies", href: "/case-studies" },
-    ],
-  },
+  // {
+  //   name: "Insights",
+  //   dropdown: [
+  //     { name: "Blog", href: "/blog" },
+  //     // Future: { name: "Case Studies", href: "/case-studies" },
+  //   ],
+  // },
   { name: "Contact", href: "/contact" },
 ];
 

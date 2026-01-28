@@ -33,13 +33,12 @@ const WhoWeAre = () => {
               className="text-base sm:text-base leading-relaxed text-white/90"
               style={{ fontFamily: "var(--font-jarkata)" }}
             >
-              Blue Sands Academy is a forward-thinking EdTech and STEM
-              innovation company redefining how science and technology education
-              is experienced in Africa. Through immersive technologies like
-              Virtual Reality (VR), Augmented Reality (AR), and Artificial
-              Intelligence (AI), we make practical learning accessible,
-              engaging, and equitable for every student, regardless of location
-              or resources.
+              DaryLabs is a forward-thinking EdTech and STEM innovation company
+              redefining how science and technology education is experienced in
+              Africa. Through immersive technologies like Virtual Reality (VR),
+              Augmented Reality (AR), and Artificial Intelligence (AI), we make
+              practical learning accessible, engaging, and equitable for every
+              student, regardless of location or resources.
             </p>
 
             <p

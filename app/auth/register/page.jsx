@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Get Started | Create your Blue Sands Account",
+  title: "Get Started | Create your DaryLabs Account",
 };
 
 const linkOptions = [
@@ -34,7 +34,7 @@ export default function RegisterUser() {
             Get Started
           </h1>
           <p className="font-thin text-xs lg:text-lg max-w-xs md:max-w-lg lg:max-w-none text-center">
-            Choose your role to begin your journey on Blue Sands STEM Labs.
+            Choose your role to begin your journey on DaryLabs STEM Labs.
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function RegisterUser() {
                 <img src="/images/bg/cover.png" className="w-full object-contain z-0" alt="" />
                 <div className="absolute flex flex-col items-center justify-center top-1 md:top-0 text-center text-white max-w-lg md:bottom-36 bottom-5 space-y-1 lg:space-y-3">
                     <h1 className="text-xl md:text-2xl lg:text-4xl font-normal">Get Started</h1>
-                    <p className="font-thin text-xs md:text-sm lg:text-lg md:max-w-lg max-w-xs">Choose your role to begin your journey on Blue Sands STEM Labs.</p>
+                    <p className="font-thin text-xs md:text-sm lg:text-lg md:max-w-lg max-w-xs">Choose your role to begin your journey on DaryLabs STEM Labs.</p>
                 </div>
             </div> */}
       <div className="border max-w-2xl mx-auto flex flex-col gap-y-5 py-20 px-10 rounded-lg shadow-sm mt-0 md:-mt-28 z-30 relative bg-white">

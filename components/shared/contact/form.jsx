@@ -544,10 +544,10 @@ export default function ContactOptionsForms() {
             <p className="text-lg">
               Email:&nbsp;
               <a
-                href="mailto:info@bluesandacademy.org"
+                href="mailto:info@darylabs.com"
                 className="text-primary hover:underline"
               >
-                info@bluesandsacademy.org
+                info@darylabs.com
               </a>
             </p>
             <p className="text-base text-gray-700">
@@ -566,10 +566,10 @@ export default function ContactOptionsForms() {
             <p className="text-lg">
               Email:&nbsp;
               <a
-                href="mailto:partnership@bluesandacademy.org"
+                href="mailto:partnership@darylabs.com"
                 className="text-primary hover:underline"
               >
-                partnership@bluesandsacademy.org
+                partnership@darylabs.com
               </a>
             </p>
             <p className="text-base text-gray-700">

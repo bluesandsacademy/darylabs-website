@@ -8,14 +8,14 @@ import HeroCTA from "@/components/legal";
 
 export default function TermsAndConditions() {
   const effectiveDate = "25 October 2025";
-  const contactEmail = "legal@bluestemlabs.org";
+  const contactEmail = "legal@darylabs.com";
 
   const sections = [
     {
       id: 1,
       title: "Acceptance",
       content:
-        "Acceptance By accessing bluesands… websites, apps, or VR/AR experiences (collectively, the “Services”), you agree to these Terms. If you represent a school, you affirm you have authority to bind the institution. If you do not agree, do not use the Services.",
+        "Acceptance By accessing darylabs… websites, apps, or VR/AR experiences (collectively, the “Services”), you agree to these Terms. If you represent a school, you affirm you have authority to bind the institution. If you do not agree, do not use the Services.",
     },
     {
       id: 2,
@@ -146,12 +146,12 @@ export default function TermsAndConditions() {
                 <span className="font-normal text-foreground/80">
                   Operator:
                 </span>{" "}
-                Blue Stem Labs (
+                DaryLab (
                 <a
-                  href="https://bluestemlabs.org"
+                  href="https://darylab.com"
                   className="text-primary hover:text-primary/80 transition-colors"
                 >
-                  https://bluestemlabs.org
+                  https://darylab.org
                 </a>
                 , 'we', 'our', 'us')
               </p>

@@ -17,7 +17,7 @@ const Title = () => {
           style={{ fontFamily: "var(--font-jarkata)" }}
         >
           From virtual experiments to real-time assessments and guided learning,
-          Blue Sands was built to bring the science lab to every Ghanan
+          DaryLabs was built to bring the science lab to every Ghanan
           classroom—no equipment required.
         </p>
       </div>

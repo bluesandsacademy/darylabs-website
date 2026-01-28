@@ -13,8 +13,8 @@ const NeedHelp = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "support@bluesandstemlabs.com",
-      link: "mailto:support@bluesandstemlabs.com",
+      description: "support@darylabs.com",
+      link: "mailto:support@darylabs.com",
     },
     {
       icon: Phone,

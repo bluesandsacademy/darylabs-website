@@ -31,7 +31,7 @@ export default function RegisterSchoolAccount() {
   const [subdomain, setSubdomain] = useState("");
   const [showModal, setShowModal] = useState(false);
 
-  const DOMAIN_SUFFIX = ".bluesandstemlabs.com";
+  const DOMAIN_SUFFIX = ".darylabs.com";
   const MAX_DOMAIN_LENGTH = 20;
 
   // React Query mutation for registration

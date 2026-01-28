@@ -8,7 +8,7 @@ import HeroCTA from "@/components/legal";
 
 export default function LicensesAttribution() {
   const effectiveDate = "26 October 2025";
-  const contactEmail = "legal@bluestemlabs.org";
+  const contactEmail = "legal@darylabs.com";
 
   const sections = [
     {
@@ -40,7 +40,7 @@ export default function LicensesAttribution() {
           subItems: [],
         },
         {
-          main: "Open-Source Software (OSS): The Services may include OSS governed by their respective licenses. To the extent required, attributions and license texts are provided in the Open-Source Notices section of the app/site or upon request at legal@bluestemlabsacademy.org. Where OSS licenses grant you additional rights, those rights are unaffected by these terms.",
+          main: "Open-Source Software (OSS): The Services may include OSS governed by their respective licenses. To the extent required, attributions and license texts are provided in the Open-Source Notices section of the app/site or upon request at legal@darylabs.com. Where OSS licenses grant you additional rights, those rights are unaffected by these terms.",
           subItems: [],
         },
       ],

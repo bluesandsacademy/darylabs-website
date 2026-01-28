@@ -33,7 +33,7 @@ const NewsletterSection = () => {
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Lesson-ready walkthroughs, analytics tips, offline teaching
-            strategies, and updates from the Blue Sands Virtual STEM Lab.
+            strategies, and updates from the DaryLabs' Virtual STEM Lab.
           </p>
 
           {/* Email Subscription Form */}
@@ -81,7 +81,7 @@ const NewsletterSection = () => {
             {/* Meta Info */}
             <div className="flex items-center gap-2 mb-4">
               <span className="text-primary font-semibold text-sm md:text-base">
-                Blue Sands Academy
+                DaryLabs
               </span>
               <span className="text-white/60">•</span>
               <span className="text-white/80 text-sm md:text-base">
