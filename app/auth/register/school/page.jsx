@@ -99,7 +99,7 @@ export default function RegisterSchoolAccount() {
   return (
     <>
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-md backdrop-saturate-150">
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 max-w-md">
             <h2 className="text-lg font-semibold text-center mb-4">
               Sign Up Successful! 🎉
