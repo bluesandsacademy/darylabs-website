@@ -378,7 +378,7 @@ export default function RegisterSchoolAccount() {
               disabled={
                 isPending || registerMutation.isPending || isCheckingSubdomain
               }
-              className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-bgBlue text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-primary text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {isPending || registerMutation.isPending
                 ? "Creating Account..."
