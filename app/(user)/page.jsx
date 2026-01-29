@@ -65,9 +65,9 @@ export default function Homepage() {
       <Features />
 
       {/* Below-the-fold content with streaming */}
-      <Suspense fallback={<SectionSkeleton />}>
+      {/* <Suspense fallback={<SectionSkeleton />}>
         <PartnersSection />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<SectionSkeleton />}>
         <STEMChallengesSection />
