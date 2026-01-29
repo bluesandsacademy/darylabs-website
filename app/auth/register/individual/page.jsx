@@ -80,28 +80,6 @@ export default function RegisterIndividualAccount() {
     });
   };
 
-  // Get today's date for max date validation (must be at least 13 years old)
-  const getMaxDate = () => {
-    const today = new Date();
-    const maxDate = new Date(
-      today.getFullYear() - 13,
-      today.getMonth(),
-      today.getDate(),
-    );
-    return maxDate.toISOString().split("T")[0];
-  };
-
-  // Get minimum date (100 years ago)
-  const getMinDate = () => {
-    const today = new Date();
-    const minDate = new Date(
-      today.getFullYear() - 100,
-      today.getMonth(),
-      today.getDate(),
-    );
-    return minDate.toISOString().split("T")[0];
-  };
-
   return (
     <>
       {showModal && (
@@ -219,8 +197,6 @@ export default function RegisterIndividualAccount() {
               value={dob}
               required
               id="dob"
-              min={getMinDate()}
-              max={getMaxDate()}
               onChange={(e) => setDob(e.target.value)}
             />
             <p className="text-xs text-gray-500">
