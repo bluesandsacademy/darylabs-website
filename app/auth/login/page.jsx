@@ -109,7 +109,7 @@ export default function UserLogin() {
           />
           <div className="absolute h-full md:h-auto top-1 lg:top-0 flex flex-col justify-center items-center gap-y-0 lg:gap-y-1 md:text-center text-white max-w-lg lg:max-w-none md:bottom-28 bottom-5 space-y-1 lg:space-y-3">
             <img
-              src="/images/logo/blue_sands_white.png"
+              src="/logo.png"
               alt="Logo"
               className="w-auto h-7 lg:h-12 mx-auto"
             />
@@ -174,7 +174,7 @@ export default function UserLogin() {
             <button
               type="submit"
               disabled={isPending || loginMutation.isPending}
-              className={`text-center rounded-md py-1 md:py-5 bg-bgBlue text-white w-full md:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition`}
+              className={`text-center rounded-md py-1 md:py-5 bg-primary text-white w-full md:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition`}
             >
               {isPending || loginMutation.isPending ? "Logging in..." : "Login"}
             </button>

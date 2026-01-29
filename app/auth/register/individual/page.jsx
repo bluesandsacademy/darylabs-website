@@ -105,14 +105,14 @@ export default function RegisterIndividualAccount() {
   return (
     <>
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-md backdrop-saturate-150">
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 max-w-md">
             <h2 className="text-lg font-semibold text-center mb-4">
               Sign Up Successful! 🎉
             </h2>
             <p className="text-center text-gray-600 mb-4">
-              We've sent a verification link to <strong>{email}</strong>. Please
-              check your email and click the link to activate your account.
+              Your registration was successful. Please log in to access our
+              services.
             </p>
             <button
               className="w-full bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition duration-200"
@@ -133,7 +133,7 @@ export default function RegisterIndividualAccount() {
           />
           <div className="absolute h-full md:h-auto top-1 lg:top-0 flex flex-col justify-center items-center gap-y-0 lg:gap-y-1 md:text-center text-white max-w-lg lg:max-w-none md:bottom-28 bottom-5 space-y-1 lg:space-y-3">
             <img
-              src="/images/logo/blue_sands_white.png"
+              src="/logo.png"
               alt="Logo"
               className="w-auto h-7 lg:h-12 mx-auto"
             />
@@ -335,7 +335,7 @@ export default function RegisterIndividualAccount() {
             <button
               type="submit"
               disabled={isPending || registerMutation.isPending}
-              className={`text-center rounded-md py-1 md:py-3 lg:py-5 bg-bgBlue text-white w-full text-sm md:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`text-center rounded-md py-1 md:py-3 lg:py-5 bg-primary text-white w-full text-sm md:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {isPending || registerMutation.isPending
                 ? "Signing Up..."

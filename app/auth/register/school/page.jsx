@@ -120,11 +120,7 @@ export default function RegisterSchoolAccount() {
 
       <section className="min-h-screen p-3 mb-10">
         <div className="w-full flex justify-center relative z-0">
-          <img
-            src="/images/bg/cover.png"
-            className="w-full object-contain z-0"
-            alt=""
-          />
+          <img src="/logo.png" className="w-full object-contain z-0" alt="" />
           <div className="absolute h-full md:h-auto top-1 lg:top-0 flex flex-col justify-center items-center gap-y-0 lg:gap-y-1 md:text-center text-white max-w-lg lg:max-w-none md:bottom-28 bottom-5 space-y-1 lg:space-y-3">
             <img
               src="/images/logo/blue_sands_white.png"
@@ -378,7 +374,7 @@ export default function RegisterSchoolAccount() {
               disabled={
                 isPending || registerMutation.isPending || isCheckingSubdomain
               }
-              className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-bgBlue text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-primary text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               {isPending || registerMutation.isPending
                 ? "Creating Account..."

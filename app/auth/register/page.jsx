@@ -26,7 +26,7 @@ export default function RegisterUser() {
         />
         <div className="absolute h-full md:h-auto top-1 lg:top-0 flex flex-col justify-center items-center gap-y-0 lg:gap-y-1 md:text-center text-white max-w-lg lg:max-w-none md:bottom-28 bottom-5 space-y-1 lg:space-y-3">
           <img
-            src="/images/logo/blue_sands_white.png"
+            src="/logo.png"
             alt="Logo"
             className="w-auto h-7 lg:h-12 mx-auto"
           />
@@ -52,7 +52,7 @@ export default function RegisterUser() {
             href={link.url}
             key={index}
             className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 ${
-              index === 0 ? "bg-bgBlue text-white" : "bg-bgGrey"
+              index === 0 ? "bg-primary text-white" : "bg-gray-200"
             } `}
           >
             {link.title}
