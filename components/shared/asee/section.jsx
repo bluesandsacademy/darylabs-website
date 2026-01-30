@@ -76,8 +76,8 @@ export default function AseeSection() {
                     <strong className="font-medium text-foreground">
                       Focus:
                     </strong>{" "}
-                    practical, offline-capable demos aligned to WAEC/NECO/IGCSE;
-                    not theory theatre.
+                    practical, offline-capable demos aligned to WAEC/IGCSE; not
+                    theory theatre.
                   </span>
                 </li>
               </ul>

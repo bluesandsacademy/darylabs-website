@@ -5,7 +5,7 @@ export default function MilestonesSection() {
     {
       icon: Users,
       stat: "7,000+ Users",
-      description: "Students learning virtually across Ghana",
+      description: "Students learning virtually across Uganda",
     },
     {
       icon: School,

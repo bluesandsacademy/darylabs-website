@@ -9,15 +9,15 @@ const PaymentOptions = () => {
     },
     {
       icon: Landmark,
-      title: "Bank Transfer (via Flutterwave or Paystack gateways)",
+      title: "Bank Transfer ",
     },
     {
       icon: Smartphone,
-      title: "Mobile Money (MTN MoMo, Opay, Palmpay)",
+      title: "Mobile Money ",
     },
     {
       icon: Wallet,
-      title: "Bulk Payments for Schools (by invoice or direct subscription)",
+      title: "Bulk Payments for Schools ",
     },
   ];
 

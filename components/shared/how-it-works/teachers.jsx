@@ -9,7 +9,7 @@ export default function TeachersSection() {
       text: "Create a Class: Teachers can invite students or integrate with the school's learning platform.",
     },
     {
-      text: "Select Experiments: Access a curated library of interactive experiments aligned with WAEC, NECO, and international STEM standards.",
+      text: "Select Experiments: Access a curated library of interactive experiments aligned with WAEC, and international STEM standards.",
     },
     {
       text: "Demonstrate Live or Assign Tasks: Use the virtual lab during class for demonstrations or assign experiments as virtual homework.",
