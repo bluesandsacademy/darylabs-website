@@ -37,7 +37,7 @@ function Loading() {
         <div className="relative w-24 h-24 flex items-center justify-center">
           <Image
             src="/logo.png"
-            alt="Blue Stem Labs"
+            alt="DaryLabs"
             width={96}
             height={96}
             className="object-contain"
@@ -49,7 +49,7 @@ function Loading() {
           className="text-3xl font-bold text-primary"
           style={{ fontFamily: "var(--font-jarkata)" }}
         >
-          BLUE STEM LABS
+          DARYLABS
         </h1>
 
         <div className="w-48 h-1 bg-gray-100 rounded-full overflow-hidden">
