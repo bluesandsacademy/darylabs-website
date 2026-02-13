@@ -48,7 +48,7 @@ export default function TermsAndConditions() {
       title: "User Content & Moderation",
       content: "",
       list: [
-        "You grant BSSL a non-exclusive, worldwide, royalty-free license to host, store, transmit, display, and process User Content solely to operate, improve, secure, and support the Services.",
+        "You grantDaryLabs a non-exclusive, worldwide, royalty-free license to host, store, transmit, display, and process User Content solely to operate, improve, secure, and support the Services.",
         " We may use automated and human moderation to enforce safeguarding and community standards. We may remove or restrict content to protect users or comply with law",
       ],
     },
@@ -62,13 +62,13 @@ export default function TermsAndConditions() {
       id: 7,
       title: "Intellectual Property",
       content:
-        "The Services, simulations, content, trademarks, and logos are owned by BSSL or licensors and are protected by IP laws. Except as permitted by an applicable license (see Licenses & Attribution page), you may not copy, modify, distribute, or make derivative works.",
+        "The Services, simulations, content, trademarks, and logos are owned byDaryLabs or licensors and are protected by IP laws. Except as permitted by an applicable license (see Licenses & Attribution page), you may not copy, modify, distribute, or make derivative works.",
     },
     {
       id: 8,
       title: "Third-Party Links & Components",
       content:
-        "The Services may link to or include third-party services and open-source software. Their terms/privacy apply. BSSL is not responsible for third-party content or availability.",
+        "The Services may link to or include third-party services and open-source software. Their terms/privacy apply.DaryLabs is not responsible for third-party content or availability.",
     },
     {
       id: 9,
@@ -80,25 +80,25 @@ export default function TermsAndConditions() {
       id: 10,
       title: "Disclaimers",
       content:
-        "The Services are provided “as is” and “as available.” To the extent permitted by law, BSSL disclaims warranties of merchantability, fitness for a particular purpose, and non-infringement. Educational outcomes vary by user and school context.",
+        "The Services are provided “as is” and “as available.” To the extent permitted by law,DaryLabs disclaims warranties of merchantability, fitness for a particular purpose, and non-infringement. Educational outcomes vary by user and school context.",
     },
     {
       id: 11,
       title: "Limitation of Liability",
       content:
-        " To the extent permitted by law, BSSL will not be liable for indirect, incidental, special, consequential, or punitive damages; or any loss of data, profits, or goodwill. Our aggregate liability for claims relating to the Services is limited to the amount paid to BSSL for the Service giving rise to the claim in the 12 months prior to the event.",
+        " To the extent permitted by law,DaryLabs will not be liable for indirect, incidental, special, consequential, or punitive damages; or any loss of data, profits, or goodwill. Our aggregate liability for claims relating to the Services is limited to the amount paid toDaryLabs for the Service giving rise to the claim in the 12 months prior to the event.",
     },
     {
       id: 12,
       title: "Indemnity",
       content:
-        "You (and your institution, if applicable) will defend, indemnify, and hold harmless BSSL against claims arising from your misuse of the Services, violation of these Terms, or infringement of third-party rights. ",
+        "You (and your institution, if applicable) will defend, indemnify, and hold harmlessDaryLabs against claims arising from your misuse of the Services, violation of these Terms, or infringement of third-party rights. ",
     },
     {
       id: 13,
       title: "Safeguarding & Privacy",
       content:
-        "Use is subject to our Safeguarding & Child Protection Policy, Privacy Policy, and Cookies Policy. Where schools act as controllers of student data, BSSL processes according to written data processing agreements (DPAs).",
+        "Use is subject to our Safeguarding & Child Protection Policy, Privacy Policy, and Cookies Policy. Where schools act as controllers of student data,DaryLabs processes according to written data processing agreements (DPAs).",
     },
     {
       id: 14,

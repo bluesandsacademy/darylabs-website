@@ -1,7 +1,7 @@
 /**
  * Privacy Policy Page
  *
- * Displays the complete privacy policy with structured sections (NDPR/NDPA-Aligned)
+ * Displays the complete privacy policy with structured sections (DPPA-Aligned)
  */
 
 import HeroCTA from "@/components/legal";
@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
   const effectiveDate = "25 October 2025";
   const controller = "DaryLabs ('DL'), 'I.umina a school in the classroom'";
   const email = "hello@darylabs.com";
-  const dpoEmail = "privacy@[your-domain]";
+  const dpoEmail = "privacy@darylabs.com";
 
   const sections = [
     {
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       id: 2,
       title: "Children & Students",
       content:
-        "We design for minors’ safety. Student experiences default to pseudonyms, restricted messaging, and educator oversight. Where schools onboard students, the school is generally the controller; BSSL is the processor. For direct-to-consumer products, BSSL is the controller and obtains verifiable parental/guardian consent where required.",
+        "We design for minors’ safety. Student experiences default to pseudonyms, restricted messaging, and educator oversight. Where schools onboard students, the school is generally the controller;DaryLabs is the processor. For direct-to-consumer products,DaryLabs is the controller and obtains verifiable parental/guardian consent where required.",
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
     },
     {
       id: 4,
-      title: "Purposes & Lawful Bases (NDPR/NDPA)",
+      title: "Purposes & Lawful Bases (DPPA)",
       content: "We process personal data for:",
       list: [
         {
@@ -141,9 +141,9 @@ export default function PrivacyPolicy() {
     },
     {
       id: 9,
-      title: "Your Rights (NDPR/NDPA)",
+      title: "Your Rights (DPPA)",
       content:
-        "Subject to exceptions, you may access, rectify, erase, restrict, object, and port your data. Parents/guardians may exercise rights for minors. Submit requests via privacy@[your-domain] or through your school administrator (if they are the controller). We will respond within the statutory period.",
+        "Subject to exceptions, you may access, rectify, erase, restrict, object, and port your data. Parents/guardians may exercise rights for minors. Submit requests via privacy@darylabs.com or through your school administrator (if they are the controller). We will respond within the statutory period.",
       subContent:
         "Submit requests e.g:nitag@[our-domain] or through your school administrator if they are the controller. We will respond within the statutory period.",
     },
@@ -174,7 +174,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight">
-              Privacy Policy (NDPR/NDPA-Aligned)
+              Privacy Policy (DPPA-Aligned)
             </h1>
             <div className="space-y-2 text-foreground/60">
               <p className="text-base md:text-lg font-light">

@@ -218,7 +218,7 @@ export default function ContactOptionsForms() {
                 <input
                   id="sales-phone"
                   type="tel"
-                  placeholder="+234 XXX XXX XXXX"
+                  placeholder="+256 XXX XXX XXXX"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
                   value={salesForm.phoneInternational}
                   onChange={(e) =>

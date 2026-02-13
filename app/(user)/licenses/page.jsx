@@ -15,18 +15,18 @@ export default function LicensesAttribution() {
       id: 1,
       title: "End-User Educational License",
       content:
-        "Subject to these terms, BSSL grants you (or your school) a limited, non-exclusive, non-transferable license to access and use the Services for educational purposes during an active subscription or authorized pilot. You may not sublicense or commercially exploit the Services.",
+        "Subject to these terms,DaryLabs grants you (or your school) a limited, non-exclusive, non-transferable license to access and use the Services for educational purposes during an active subscription or authorized pilot. You may not sublicense or commercially exploit the Services.",
     },
     {
       id: 2,
       title: "Content & Curriculum",
       list: [
         {
-          main: "BSSL Content: All simulations, curricula, text, images, videos, and assessments are owned by BSSL or licensed to BSSL. Except as permitted by the Service, you may not copy, modify, or distribute BSSL Content without permission.",
+          main: "BSSL Content: All simulations, curricula, text, images, videos, and assessments are owned byDaryLabs or licensed toDaryLabs. Except as permitted by the Service, you may not copy, modify, or distributeDaryLabs Content without permission.",
           subItems: [],
         },
         {
-          main: "Teacher-Generated Materials: Teachers retain rights to original materials they upload. You grant BSSL a license to host, display, and process such materials to operate the Services for your class.",
+          main: "Teacher-Generated Materials: Teachers retain rights to original materials they upload. You grantDaryLabs a license to host, display, and process such materials to operate the Services for your class.",
           subItems: [],
         },
       ],
@@ -36,7 +36,7 @@ export default function LicensesAttribution() {
       title: "Software Components",
       list: [
         {
-          main: "Proprietary Software: BSSL software is licensed, not sold. Reverse engineering, circumventing security, or removing notices is prohibited unless permitted by law.",
+          main: "Proprietary Software:DaryLabs software is licensed, not sold. Reverse engineering, circumventing security, or removing notices is prohibited unless permitted by law.",
           subItems: [],
         },
         {
@@ -55,13 +55,13 @@ export default function LicensesAttribution() {
       id: 5,
       title: "Feedback",
       content:
-        "If you submit feedback, ideas, or suggestions, you grant BSSL a perpetual, irrevocable, worldwide, royalty-free license to use and incorporate them without obligation or attribution.",
+        "If you submit feedback, ideas, or suggestions, you grantDaryLabs a perpetual, irrevocable, worldwide, royalty-free license to use and incorporate them without obligation or attribution.",
     },
     {
       id: 6,
       title: "Third-Party Services",
       content:
-        "Certain features may integrate third-party services (e.g., SSO, storage). Their licenses and terms apply. BSSL is not responsible for third-party terms or service availability.",
+        "Certain features may integrate third-party services (e.g., SSO, storage). Their licenses and terms apply.DaryLabs is not responsible for third-party terms or service availability.",
     },
   ];
 
