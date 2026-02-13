@@ -8,7 +8,7 @@ const Footer = () => {
     { name: "About", href: "/about" },
     { name: "How it Works", href: "/how-it-works" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Partnership", href: "/partnership" },
+    // { name: "Partnership", href: "/partnership" },
   ];
 
   const resourceLinks = [

@@ -15,7 +15,7 @@ const navLinks = [
   { name: "How it works", href: "/how-it-works" },
   { name: "Simulations", href: "/simulations" },
   { name: "Pricing", href: "/pricing" },
-  { name: "Partnership", href: "/partnerships" },
+  // { name: "Partnership", href: "/partnerships" },
 
   // {
   //   name: "Insights",
