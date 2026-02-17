@@ -19,8 +19,8 @@ const NeedHelp = () => {
     {
       icon: Phone,
       title: "Call",
-      description: "+234 (0) 813-962-2943",
-      link: "tel:+2348139622943",
+      description: "++256 702 843 825",
+      link: "tel:+256 702 843 825",
     },
   ];
 

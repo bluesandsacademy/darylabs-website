@@ -17,8 +17,8 @@ export default function BecomePartnerCTA() {
       id: 2,
       icon: Phone,
       label: "Call",
-      value: "+234 (0) 813-962-2583",
-      href: "tel:+2348139622583",
+      value: "+256 702 843 825",
+      href: "tel:+256702843825",
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export default function BecomePartnerCTA() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0483e2] via-[#0483e2] to-[#0370c7] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-linear-to-br from-primary via-primary to-[#0370c7] py-16 lg:py-24">
       {/* Diagonal Pattern Overlay */}
       <div
         className="absolute inset-0 opacity-10"

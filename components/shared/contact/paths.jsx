@@ -17,7 +17,7 @@ export default function ThreeQuickPaths() {
     {
       icon: HeadphonesIcon,
       title: "Get Support",
-      description: "Contact us at (+234) 8109622583",
+      description: "Contact us at +256 702 843 825",
     },
   ];
 
