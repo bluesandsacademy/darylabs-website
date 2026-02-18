@@ -22,7 +22,7 @@ export default function LicensesAttribution() {
       title: "Content & Curriculum",
       list: [
         {
-          main: "BSSL Content: All simulations, curricula, text, images, videos, and assessments are owned byDaryLabs or licensed toDaryLabs. Except as permitted by the Service, you may not copy, modify, or distributeDaryLabs Content without permission.",
+          main: "DaryLabs Content: All simulations, curricula, text, images, videos, and assessments are owned byDaryLabs or licensed toDaryLabs. Except as permitted by the Service, you may not copy, modify, or distributeDaryLabs Content without permission.",
           subItems: [],
         },
         {

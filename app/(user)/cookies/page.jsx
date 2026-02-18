@@ -51,19 +51,19 @@ export default function CookiesPolicy() {
       title: "Cookies We Set (illustrative)",
       list: [
         {
-          main: "bssl_session (Strictly necessary): maintains login session.",
+          main: "darylabs_session (Strictly necessary): maintains login session.",
           subItems: [],
         },
         {
-          main: "bssl_pref_lang (Preferences): stores language.",
+          main: "darylabs_pref_lang (Preferences): stores language.",
           subItems: [],
         },
         {
-          main: "bssl_analytics (Analytics): collects aggregated usage; expiry ≈ 13 months.",
+          main: "darylabs_analytics (Analytics): collects aggregated usage; expiry ≈ 13 months.",
           subItems: [],
         },
         {
-          main: "bssl_sec_rate (Security): rate-limit and anti-abuse.",
+          main: "darylabs_sec_rate (Security): rate-limit and anti-abuse.",
           subItems: [],
         },
       ],
