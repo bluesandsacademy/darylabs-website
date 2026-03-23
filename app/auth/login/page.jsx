@@ -66,12 +66,7 @@ export default function UserLogin() {
         const result = await loginMutation.mutateAsync(formData);
 
         toast.success(`Welcome back, ${result.user.fullName}!`);
-
-        // Refresh server cache so middleware sees the new session, then redirect
-        router.refresh();
-        setTimeout(() => {
-          redirectBasedOnRole(result.user.role);
-        }, 500);
+        redirectBasedOnRole(result.user.role);
       } catch (error) {
         if (
           error.message.includes("Invalid email") ||
