@@ -5,115 +5,93 @@ import { createClient } from "@/supabase/client";
 
 const AuthContext = createContext({
   user: null,
-  isLoading: false,
+  isLoading: true,
   isAuthenticated: false,
   signOut: async () => {},
 });
 
-export function AuthProvider({ children, initialUser = null }) {
-  const [supabase] = useState(() => createClient());
-  const [user, setUser] = useState(initialUser);
-  const [isLoading, setIsLoading] = useState(!initialUser);
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const getInitialSession = async () => {
-      try {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
+    // createClient() returns null on the server — this effect only runs in the browser
+    const supabase = createClient();
+    if (!supabase) {
+      setIsLoading(false);
+      return;
+    }
 
-        if (session?.user) {
-          await fetchUserProfile(session.user);
-        } else {
-          setUser(null);
+    const fetchUserProfile = async (authUser) => {
+      try {
+        const userType = authUser.user_metadata?.user_type;
+        let profile = null;
+        let role = "student";
+
+        if (userType === "school") {
+          const { data } = await supabase
+            .from("schools")
+            .select("*")
+            .eq("id", authUser.id)
+            .single();
+          if (data) { profile = data; role = "schoolAdmin"; }
+        } else if (userType === "individual") {
+          const { data } = await supabase
+            .from("individuals")
+            .select("*")
+            .eq("id", authUser.id)
+            .single();
+          if (data) { profile = data; role = "student"; }
         }
-      } catch (error) {
-        console.error("Error fetching session:", error);
+
+        setUser({
+          id: authUser.id,
+          email: authUser.email,
+          fullName: profile?.full_name || authUser.user_metadata?.full_name || "User",
+          role,
+          userType,
+          profile,
+        });
+      } catch {
         setUser(null);
-      } finally {
-        setIsLoading(false);
       }
     };
 
-    if (!initialUser) {
-      getInitialSession();
-    }
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event === "SIGNED_IN" && session?.user) {
-        await fetchUserProfile(session.user);
-      } else if (event === "SIGNED_OUT") {
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        fetchUserProfile(session.user).finally(() => setIsLoading(false));
+      } else {
         setUser(null);
-      } else if (event === "TOKEN_REFRESHED" && session?.user) {
-        await fetchUserProfile(session.user);
+        setIsLoading(false);
       }
     });
 
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, [supabase, initialUser]);
-
-  const fetchUserProfile = async (authUser) => {
-    try {
-      const userType = authUser.user_metadata?.user_type;
-      let profile = null;
-      let role = "student";
-
-      if (userType === "school") {
-        const { data: schoolData } = await supabase
-          .from("schools")
-          .select("*")
-          .eq("id", authUser.id)
-          .single();
-
-        if (schoolData) {
-          profile = schoolData;
-          role = "schoolAdmin";
-        }
-      } else if (userType === "individual") {
-        const { data: individualData } = await supabase
-          .from("individuals")
-          .select("*")
-          .eq("id", authUser.id)
-          .single();
-
-        if (individualData) {
-          profile = individualData;
-          role = "student";
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        if ((event === "SIGNED_IN" || event === "TOKEN_REFRESHED") && session?.user) {
+          await fetchUserProfile(session.user);
+        } else if (event === "SIGNED_OUT") {
+          setUser(null);
         }
       }
+    );
 
-      setUser({
-        id: authUser.id,
-        email: authUser.email,
-        fullName:
-          profile?.full_name || authUser.user_metadata?.full_name || "User",
-        role: role,
-        userType: userType,
-        profile: profile,
-      });
-    } catch (error) {
-      console.error("Error fetching user profile:", error);
-      setUser(null);
-    }
-  };
+    return () => subscription.unsubscribe();
+  }, []); // Runs once on mount in the browser only
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    const supabase = createClient();
+    if (supabase) await supabase.auth.signOut();
     setUser(null);
   };
 
-  const value = {
-    user,
-    isLoading,
-    isAuthenticated: !!user,
-    signOut,
-  };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, isLoading, isAuthenticated: !!user, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {
