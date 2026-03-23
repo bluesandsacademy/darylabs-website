@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Toaster } from "react-hot-toast";
 import QueryProvider from "@/components/QueryClientProvider";
+import { AuthProvider } from "@/providers/auth-provider";
 
 const jarkataSans = Plus_Jakarta_Sans({
   variable: "--font-jarkata",
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${jarkataSans.variable} antialiased`}>
         <QueryProvider>
-          {children}
+          <AuthProvider>
+            {children}
+          </AuthProvider>
 
           <Toaster position="top-center" />
         </QueryProvider>

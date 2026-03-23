@@ -42,6 +42,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Image from "next/image";
+import { useAuth } from "@/providers/auth-provider";
 
 // ==========================================
 // LOADING SCREEN COMPONENT
@@ -276,7 +277,17 @@ const demographicsData = [
 // MAIN DASHBOARD COMPONENT
 // ==========================================
 const DashboardPage = () => {
+  const { user } = useAuth();
   const [loading, setLoading] = useState(true);
+  console.log(user);
+  const initials = user?.fullName
+    ? user.fullName
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2)
+    : "?";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -330,13 +341,17 @@ const DashboardPage = () => {
               {/* User Profile */}
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">KO</span>
+                  <span className="text-white font-semibold text-sm">
+                    {initials}
+                  </span>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-semibold text-gray-900">
-                    Kingsley Okon
+                    {user?.fullName || "User"}
                   </p>
-                  <p className="text-xs text-gray-500">Account: Admin</p>
+                  <p className="text-xs text-gray-500">
+                    Account: {user?.role || "—"}
+                  </p>
                 </div>
               </div>
             </div>

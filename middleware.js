@@ -16,6 +16,10 @@ export async function middleware(request) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
+            request.cookies.set(name, value, options);
+          });
+          response = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set(name, value, options);
           });
         },
@@ -59,7 +63,10 @@ export async function middleware(request) {
   }
 
   // Redirect unauthenticated users to login
-  if (!user && !isPublicRoute && pathname.startsWith("/dashboard")) {
+  const protectedPrefixes = ["/dashboard", "/school", "/admin", "/teacher", "/settings"];
+  const isProtectedRoute = protectedPrefixes.some((prefix) => pathname.startsWith(prefix));
+
+  if (!user && isProtectedRoute) {
     return NextResponse.redirect(new URL("/auth/login", request.url));
   }
 
@@ -67,5 +74,12 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/dashboard/", "/settings/"],
+  matcher: [
+    "/dashboard/:path*",
+    "/school/:path*",
+    "/admin/:path*",
+    "/teacher/:path*",
+    "/settings/:path*",
+    "/auth/:path*",
+  ],
 };

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import NProgress from "nprogress";
 import { toast } from "react-hot-toast";
+import { Eye, EyeOff } from "lucide-react";
 import { useLogin } from "@/hooks/use-login";
 import { useAuth } from "@/providers/auth-provider";
 
@@ -20,6 +21,7 @@ export default function UserLogin() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // React Query mutation for login
   const loginMutation = useLogin();
@@ -65,7 +67,8 @@ export default function UserLogin() {
 
         toast.success(`Welcome back, ${result.user.fullName}!`);
 
-        // Redirect based on role
+        // Refresh server cache so middleware sees the new session, then redirect
+        router.refresh();
         setTimeout(() => {
           redirectBasedOnRole(result.user.role);
         }, 500);
@@ -152,15 +155,25 @@ export default function UserLogin() {
             >
               Password
             </label>
-            <input
-              type="password"
-              name="password"
-              className="rounded-md border px-2 md:px-3 py-1 md:py-3 w-full text-gray-600 text-sm md:text-base"
-              id="password"
-              value={password}
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                className="rounded-md border px-2 md:px-3 py-1 md:py-3 w-full text-gray-600 text-sm md:text-base pr-10"
+                id="password"
+                value={password}
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition"
+                tabIndex={-1}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
           </div>
 
           <div className="w-full flex flex-col gap-y-3">
