@@ -152,7 +152,7 @@ const Footer = () => {
       <div className="bg-[#101828] border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
-            ©2025 DaryLabs. All rights reserved.
+            ©{new Date().getFullYear()} DaryLabs. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a
