@@ -1,8 +1,6 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-
-import { useRouter } from "next/navigation";
 import { createClient } from "@/supabase/client";
 
 const AuthContext = createContext({
@@ -13,13 +11,11 @@ const AuthContext = createContext({
 });
 
 export function AuthProvider({ children, initialUser = null }) {
+  const [supabase] = useState(() => createClient());
   const [user, setUser] = useState(initialUser);
   const [isLoading, setIsLoading] = useState(!initialUser);
-  const router = useRouter();
-  const supabase = createClient();
 
   useEffect(() => {
-    // Get initial session
     const getInitialSession = async () => {
       try {
         const {
@@ -43,7 +39,6 @@ export function AuthProvider({ children, initialUser = null }) {
       getInitialSession();
     }
 
-    // Listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -59,7 +54,7 @@ export function AuthProvider({ children, initialUser = null }) {
     return () => {
       subscription.unsubscribe();
     };
-  }, [supabase, router, initialUser]);
+  }, [supabase, initialUser]);
 
   const fetchUserProfile = async (authUser) => {
     try {
