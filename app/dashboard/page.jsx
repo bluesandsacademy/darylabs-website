@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   LineChart,
   Line,
@@ -40,82 +40,106 @@ import {
   Search,
   Globe,
   ChevronDown,
+  LogOut,
 } from "lucide-react";
 import Image from "next/image";
 import { useAuth } from "@/providers/auth-provider";
+import { useLogout } from "@/hooks/use-logout";
 
 // ==========================================
-// LOADING SCREEN COMPONENT
+// SHIMMER SKELETON COMPONENTS
 // ==========================================
-const LoadingScreen = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 flex items-center justify-center z-50"
-    >
-      <div className="text-center">
-        {/* Logo Animation */}
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <div className="w-24 h-24 bg-white rounded-2xl mx-auto flex items-center justify-center shadow-2xl">
-            <motion.div
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              <FlaskConical className="w-12 h-12 text-blue-600" />
-            </motion.div>
-          </div>
-        </motion.div>
+const Shimmer = ({ className = "" }) => (
+  <div className={`animate-pulse bg-gray-200 rounded-lg ${className}`} />
+);
 
-        {/* Brand Name */}
-        <motion.h1
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-4xl font-bold text-white mb-2"
-        >
-          DARY LABS
-        </motion.h1>
-
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-blue-200 text-lg"
-        >
-          Loading Dashboard...
-        </motion.p>
-
-        {/* Progress Bar */}
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "200px" }}
-          transition={{ delay: 0.7 }}
-          className="h-1 bg-white/30 rounded-full mx-auto mt-8 overflow-hidden"
-        >
-          <motion.div
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 2.5, ease: "easeInOut" }}
-            className="h-full bg-white rounded-full"
-          />
-        </motion.div>
+const MetricCardSkeleton = () => (
+  <div className="bg-white rounded-xl p-6 shadow-sm">
+    <div className="flex items-start justify-between">
+      <div className="flex-1 space-y-3">
+        <Shimmer className="h-4 w-2/3" />
+        <Shimmer className="h-7 w-1/2" />
+        <Shimmer className="h-3 w-3/4" />
       </div>
-    </motion.div>
-  );
-};
+      <Shimmer className="w-12 h-12 rounded-xl flex-shrink-0" />
+    </div>
+  </div>
+);
+
+const ChartSkeleton = ({ className = "" }) => (
+  <div className={`bg-white rounded-xl p-6 shadow-sm ${className}`}>
+    <Shimmer className="h-5 w-40 mb-6" />
+    <Shimmer className="h-[300px] w-full rounded-xl" />
+  </div>
+);
+
+const DashboardSkeleton = () => (
+  <div className="min-h-screen bg-gray-50">
+    {/* Sidebar skeleton */}
+    <div className="w-64 bg-white h-screen fixed left-0 top-0 border-r border-gray-200 flex flex-col">
+      <div className="p-6 border-b border-gray-200">
+        <Shimmer className="h-8 w-36" />
+      </div>
+      <div className="flex-1 py-4 px-3 space-y-2">
+        {Array.from({ length: 7 }).map((_, i) => (
+          <Shimmer key={i} className="h-11 w-full rounded-lg" />
+        ))}
+      </div>
+      <div className="p-3 border-t border-gray-200 space-y-2">
+        <Shimmer className="h-11 w-full rounded-lg" />
+        <Shimmer className="h-11 w-full rounded-lg" />
+      </div>
+      <div className="p-3">
+        <Shimmer className="h-20 w-full rounded-xl" />
+      </div>
+    </div>
+
+    {/* Main content skeleton */}
+    <div className="ml-64">
+      {/* Header */}
+      <div className="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between">
+        <Shimmer className="h-7 w-52" />
+        <div className="flex items-center gap-4">
+          <Shimmer className="h-9 w-64 rounded-lg" />
+          <Shimmer className="h-9 w-28 rounded-lg" />
+          <div className="flex items-center gap-3">
+            <Shimmer className="w-10 h-10 rounded-full" />
+            <div className="space-y-1">
+              <Shimmer className="h-4 w-28" />
+              <Shimmer className="h-3 w-20" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main className="p-8 space-y-8">
+        {/* Metric sections */}
+        {Array.from({ length: 3 }).map((_, s) => (
+          <section key={s}>
+            <Shimmer className="h-5 w-40 mb-4" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <MetricCardSkeleton key={i} />
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {/* Charts row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <ChartSkeleton className="lg:col-span-2" />
+          <ChartSkeleton />
+        </div>
+
+        {/* Bottom row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <ChartSkeleton className="lg:col-span-2" />
+          <ChartSkeleton />
+        </div>
+      </main>
+    </div>
+  </div>
+);
 
 // ==========================================
 // METRIC CARD COMPONENT
@@ -277,9 +301,9 @@ const demographicsData = [
 // MAIN DASHBOARD COMPONENT
 // ==========================================
 const DashboardPage = () => {
-  const { user } = useAuth();
-  const [loading, setLoading] = useState(true);
-  console.log(user);
+  const { user, isLoading } = useAuth();
+  const { logout } = useLogout();
+
   const initials = user?.fullName
     ? user.fullName
         .split(" ")
@@ -289,20 +313,8 @@ const DashboardPage = () => {
         .slice(0, 2)
     : "?";
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <AnimatePresence>
-        <LoadingScreen />
-      </AnimatePresence>
-    );
+  if (isLoading) {
+    return <DashboardSkeleton />;
   }
 
   return (
@@ -353,6 +365,13 @@ const DashboardPage = () => {
                     Account: {user?.role || "—"}
                   </p>
                 </div>
+                <button
+                  onClick={logout}
+                  title="Logout"
+                  className="ml-2 p-2 rounded-lg text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors"
+                >
+                  <LogOut className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>

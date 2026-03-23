@@ -37,7 +37,7 @@ export default function UserLogin() {
     switch (role) {
       case "schoolAdmin":
       case "SchoolAdmin":
-        router.push("/school/dashboard");
+        router.push("/dashboard");
         break;
       case "globalAdmin":
       case "GlobalAdmin":

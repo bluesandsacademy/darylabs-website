@@ -5,9 +5,37 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import NProgress from "nprogress";
 import { toast } from "react-hot-toast";
+import { Eye, EyeOff, Loader2, Check, X } from "lucide-react";
 import { countries, workPositions } from "@/lib/data";
 import { useRegisterSchool } from "@/hooks/use-register-school";
 import { useCheckSubdomain } from "@/hooks/use-check-subdomain";
+
+const PasswordStrength = ({ password }) => {
+  const rules = [
+    { label: "At least 6 characters", pass: password.length >= 6 },
+    { label: "Contains a number", pass: /\d/.test(password) },
+    { label: "Contains a letter", pass: /[a-zA-Z]/.test(password) },
+  ];
+
+  if (!password) return null;
+
+  return (
+    <ul className="mt-2 space-y-1">
+      {rules.map(({ label, pass }) => (
+        <li key={label} className="flex items-center gap-1.5 text-xs">
+          {pass ? (
+            <Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+          ) : (
+            <X className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+          )}
+          <span className={pass ? "text-green-600" : "text-gray-400"}>
+            {label}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default function RegisterSchoolAccount() {
   const router = useRouter();
@@ -26,25 +54,18 @@ export default function RegisterSchoolAccount() {
   const [totalStudents, setTotalStudents] = useState("");
   const [country, setCountry] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [couponCode, setCouponCode] = useState("");
   const [subdomainInput, setSubdomainInput] = useState("");
   const [subdomain, setSubdomain] = useState("");
-  const [showModal, setShowModal] = useState(false);
 
   const DOMAIN_SUFFIX = ".darylabs.com";
   const MAX_DOMAIN_LENGTH = 20;
 
-  // React Query mutation for registration
   const registerMutation = useRegisterSchool();
 
-  // Debounced subdomain check
   const { data: subdomainCheck, isLoading: isCheckingSubdomain } =
     useCheckSubdomain(subdomain, subdomain.length >= 3);
-
-  const handleModalClose = () => {
-    setShowModal(false);
-    router.push("/auth/login");
-  };
 
   const handleSubdomainChange = (e) => {
     let value = e.target.value;
@@ -63,7 +84,6 @@ export default function RegisterSchoolAccount() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    // Check if subdomain is available
     if (!subdomainCheck?.available) {
       toast.error("Please choose an available subdomain");
       return;
@@ -76,10 +96,8 @@ export default function RegisterSchoolAccount() {
     startTransition(async () => {
       try {
         await registerMutation.mutateAsync(formData);
-        setShowModal(true);
-        toast.success(
-          "Registration successful! Please check your email for verification.",
-        );
+        toast.success("Account created! Please verify your email then log in.");
+        router.push("/dashboard");
       } catch (error) {
         if (error.message.includes("already")) {
           toast.error("Email already registered. Please try logging in.");
@@ -96,28 +114,10 @@ export default function RegisterSchoolAccount() {
     });
   };
 
+  const isSubmitting = isPending || registerMutation.isPending;
+
   return (
     <>
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-md backdrop-saturate-150">
-          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 max-w-md">
-            <h2 className="text-lg font-semibold text-center mb-4">
-              Sign Up Successful! 🎉
-            </h2>
-            <p className="text-center text-gray-600 mb-4">
-              Your registration was successful. Please log in to access our
-              services.
-            </p>
-            <button
-              className="w-full bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition duration-200"
-              onClick={handleModalClose}
-            >
-              Go to Login
-            </button>
-          </div>
-        </div>
-      )}
-
       <section className="min-h-screen p-3 mb-10">
         <div className="w-full flex justify-center relative z-0">
           <img
@@ -292,19 +292,31 @@ export default function RegisterSchoolAccount() {
             >
               Password
             </label>
-            <input
-              type="password"
-              name="password"
-              className="rounded-md border px-3 py-1 md:py-3 w-full text-gray-600 text-sm md:text-base lg:text-lg"
-              id="password"
-              value={password}
-              required
-              minLength={6}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <p className="text-xs text-gray-500">
-              Password must be at least 6 characters long
-            </p>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                className="rounded-md border px-3 py-1 md:py-3 w-full text-gray-600 text-sm md:text-base pr-10"
+                id="password"
+                value={password}
+                required
+                minLength={6}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition"
+                tabIndex={-1}
+              >
+                {showPassword ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+              </button>
+            </div>
+            <PasswordStrength password={password} />
           </div>
 
           <div className="flex flex-col w-full gap-y-1 md:gap-y-4">
@@ -321,37 +333,41 @@ export default function RegisterSchoolAccount() {
                 className="rounded-md border px-3 py-1 md:py-3 w-full text-gray-600 text-sm md:text-base pr-40"
                 id="subdomain"
                 value={subdomainInput}
-                placeholder="Enter subdomain"
+                placeholder="yourschool"
                 onChange={handleSubdomainChange}
                 maxLength={MAX_DOMAIN_LENGTH}
                 required
               />
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm md:text-base">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">
                 {DOMAIN_SUFFIX}
               </span>
             </div>
-            {subdomain && subdomain.length >= 3 && (
-              <div className="flex items-center gap-2">
+            {subdomainInput.length >= 3 && (
+              <div className="flex items-center gap-1.5 text-sm">
                 {isCheckingSubdomain ? (
-                  <p className="text-sm text-gray-600">
-                    Checking availability...
-                  </p>
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin text-gray-400" />
+                    <span className="text-gray-500">Checking availability…</span>
+                  </>
                 ) : subdomainCheck?.available ? (
-                  <p className="text-sm text-green-600">
-                    ✓ <span className="font-medium">{subdomain}</span> is
-                    available
-                  </p>
+                  <>
+                    <Check className="w-3.5 h-3.5 text-green-500" />
+                    <span className="text-green-600">
+                      <span className="font-medium">{subdomain}</span> is available
+                    </span>
+                  </>
                 ) : (
-                  <p className="text-sm text-red-600">
-                    ✗ <span className="font-medium">{subdomain}</span> is
-                    already taken
-                  </p>
+                  <>
+                    <X className="w-3.5 h-3.5 text-red-500" />
+                    <span className="text-red-600">
+                      <span className="font-medium">{subdomain}</span> is already taken
+                    </span>
+                  </>
                 )}
               </div>
             )}
-            <p className="text-xs text-gray-500">
-              Maximum {MAX_DOMAIN_LENGTH} characters. Only letters, numbers, and
-              hyphens allowed.
+            <p className="text-xs text-gray-400">
+              Max {MAX_DOMAIN_LENGTH} characters. Letters, numbers, and hyphens only.
             </p>
           </div>
 
@@ -360,7 +376,8 @@ export default function RegisterSchoolAccount() {
               htmlFor="couponCode"
               className="font-medium text-gray-700 text-sm md:text-md"
             >
-              Coupon Code (Optional)
+              Coupon Code{" "}
+              <span className="text-gray-400 font-normal">(Optional)</span>
             </label>
             <input
               type="text"
@@ -375,14 +392,17 @@ export default function RegisterSchoolAccount() {
           <div className="w-full flex flex-col gap-y-1 md:gap-y-3">
             <button
               type="submit"
-              disabled={
-                isPending || registerMutation.isPending || isCheckingSubdomain
-              }
-              className={`text-center text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-primary text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed`}
+              disabled={isSubmitting || isCheckingSubdomain}
+              className="flex items-center justify-center gap-2 text-sm md:text-base rounded-md py-2 md:py-3 lg:py-5 bg-primary text-white w-full lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
-              {isPending || registerMutation.isPending
-                ? "Creating Account..."
-                : "Sign Up"}
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Creating Account…
+                </>
+              ) : (
+                "Sign Up"
+              )}
             </button>
             <p className="text-gray-500 text-center text-sm md:text-base">
               Already have an account?{" "}

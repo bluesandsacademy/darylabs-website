@@ -51,7 +51,6 @@ export function AuthProvider({ children, initialUser = null }) {
         await fetchUserProfile(session.user);
       } else if (event === "SIGNED_OUT") {
         setUser(null);
-        router.push("/auth/login");
       } else if (event === "TOKEN_REFRESHED" && session?.user) {
         await fetchUserProfile(session.user);
       }
@@ -108,13 +107,8 @@ export function AuthProvider({ children, initialUser = null }) {
   };
 
   const signOut = async () => {
-    try {
-      await supabase.auth.signOut();
-      setUser(null);
-      router.push("/auth/login");
-    } catch (error) {
-      console.error("Error signing out:", error);
-    }
+    await supabase.auth.signOut();
+    setUser(null);
   };
 
   const value = {
