@@ -1,6 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
+import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import QueryProvider from "@/components/QueryClientProvider";
 import { AuthProvider } from "@/providers/auth-provider";
@@ -21,9 +21,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${jarkataSans.variable} antialiased`}>
         <QueryProvider>
-          <AuthProvider>
-            {children}
-          </AuthProvider>
+          <Suspense>
+            <AuthProvider>
+              {children}
+            </AuthProvider>
+          </Suspense>
 
           <Toaster position="top-center" />
         </QueryProvider>
