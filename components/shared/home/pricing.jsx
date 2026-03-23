@@ -11,7 +11,7 @@ const PricingSection = () => {
     const fetchExchangeRate = async () => {
       try {
         const response = await fetch(
-          "https://v6.exchangerate-api.com/v6/892a9ad526f14e1e8f7652e0/latest/USD",
+          `https://v6.exchangerate-api.com/v6/${process.env.NEXT_PUBLIC_EXCHANGERATE_API_KEY}/latest/USD`,
         );
         const data = await response.json();
         if (data.conversion_rates?.UGX)
