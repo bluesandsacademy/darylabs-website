@@ -28,10 +28,13 @@ export async function middleware(request) {
   );
 
   // Refresh session if expired
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
+  let user = null;
+  try {
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+  } catch {
+    // If Supabase is unreachable, treat as unauthenticated
+  }
 
   const { pathname } = request.nextUrl;
 
