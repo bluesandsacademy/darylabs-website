@@ -1,0 +1,45 @@
+{
+  "name": "dary-labs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@formbricks/js": "^4.2.1",
+    "@reactour/tour": "^3.8.0",
+    "@tanstack/react-query": "^5.90.20",
+    "@tanstack/react-query-devtools": "^5.91.2",
+    "axios": "^1.9.0",
+    "caniuse-lite": "^1.0.30001786",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "enhanced-resolve": "^5.20.1",
+    "framer-motion": "^12.38.0",
+    "googleapis": "^164.1.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.552.0",
+    "next": "15.5.5",
+    "nprogress": "^0.2.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-simple-maps": "^3.0.0",
+    "react-toastify": "^11.0.5",
+    "recharts": "^3.2.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/react": "19.2.10",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.5",
+    "tailwindcss": "^4",
+    "typescript": "5.9.3"
+  }
+}

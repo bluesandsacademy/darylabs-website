@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --bg-blue: #006fcc;
+  --bg-grey: #f1f4f9;
+  --black-text: #262626;
+  --bg-white: #ffffff;
+}
+
+@theme {
+  --color-primary: #0483e2;
+  --color-secondary: #02345a;
+  --color-bgBlue: #006fcc;
+  --color-bgGrey: #f1f4f9;
+}
+
+body {
+  color: var(--black-text);
+  background: var(--bg-white);
+  font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+}
+
+/* Remove arrows from number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 🌀 Hero Blob Shape + Animation */
+.clip-hero-blob {
+  clip-path: polygon(
+    72% 0%,
+    100% 50%,
+    95% 55%,
+    80% 90%,
+    50% 100%,
+    20% 90%,
+    0% 60%,
+    5% 25%,
+    30% 20%
+  );
+  animation: heroBlobMorph 10s ease-in-out infinite;
+}
+
+@keyframes heroBlobMorph {
+  0% {
+    clip-path: polygon(
+      72% 0%,
+      100% 20%,
+      95% 55%,
+      80% 90%,
+      50% 100%,
+      20% 90%,
+      0% 60%,
+      5% 25%,
+      30% 5%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      68% 3%,
+      98% 28%,
+      100% 60%,
+      82% 88%,
+      52% 100%,
+      18% 90%,
+      0% 62%,
+      6% 30%,
+      28% 8%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      72% 0%,
+      100% 20%,
+      95% 55%,
+      80% 90%,
+      50% 100%,
+      20% 90%,
+      0% 60%,
+      5% 25%,
+      30% 5%
+    );
+  }
+}
+/* Add this to your globals.css file */
+
+.contact-hero-clip {
+  width: 450px;
+  height: 450px;
+  clip-path: path(
+    "M 450,225 Q 450,100 350,50 Q 250,0 150,50 Q 50,100 50,225 Q 50,350 150,400 Q 250,450 350,400 Q 400,375 425,325 L 450,450 L 0,450 L 0,0 L 450,0 Z"
+  );
+}
+
+@media (max-width: 768px) {
+  .contact-hero-clip {
+    width: 350px;
+    height: 350px;
+    clip-path: path(
+      "M 350,175 Q 350,75 275,40 Q 200,5 125,40 Q 50,75 50,175 Q 50,275 125,310 Q 200,345 275,310 Q 312,288 331,253 L 350,350 L 0,350 L 0,0 L 350,0 Z"
+    );
+  }
+}
+
+nurr {
+  background-color: #006fcc;
+}
