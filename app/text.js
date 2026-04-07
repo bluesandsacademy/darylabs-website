@@ -272,7 +272,7 @@ const Slide1 = ({ isActive }) => {
 
         {isActive && (
           <div className="gap-4">
-            <Link href="/auth/register">
+            <Link href="https://app.bluesandstemlabs.com/auth/register">
               <motion.button
                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-secondary font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: shouldReduceMotion ? 1 : 1.05 }}
@@ -356,7 +356,7 @@ const Slide2 = ({ isActive }) => {
 
         {isActive && (
           <div className="gap-4">
-            <Link href="/auth/register">
+            <Link href="https://app.bluesandstemlabs.com/auth/register">
               <motion.button
                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-secondary font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: shouldReduceMotion ? 1 : 1.05 }}
@@ -439,7 +439,7 @@ const Slide3 = ({ isActive }) => {
 
         {isActive && (
           <div className="gap-4">
-            <Link href="/auth/register">
+            <Link href="https://app.bluesandstemlabs.com/auth/register">
               <motion.button
                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-secondary font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: shouldReduceMotion ? 1 : 1.05 }}

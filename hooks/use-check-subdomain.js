@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { checkSubdomainAvailability } from "@/app/actions/register-school";
+import { checkSubdomainAvailability } from "@/app/auth/register-school/actions";
 
 export function useCheckSubdomain(subdomain, enabled = true) {
   return useQuery({

@@ -1,0 +1,18 @@
+const TeacherWelcomeBanner = ({ firstName }) => {
+  return (
+    <div className="p-3 md:p-5 space-y-6 md:space-y-10">
+      <div className="relative rounded-lg overflow-hidden h-32 md:h-28 lg:h-20 w-full bg-[#303C48]">
+        <div className="absolute top-1/2 -translate-y-1/2 text-white left-4 md:left-10">
+          <h3 className="font-medium leading-tight md:leading-none my-0 text-lg md:text-2xl lg:text-3xl">
+            Welcome Back, {firstName}
+          </h3>
+          <p className="my-0 text-sm md:text-md leading-normal md:leading-none">
+            Ready for your next STEM adventure?
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TeacherWelcomeBanner;

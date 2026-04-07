@@ -8,7 +8,7 @@ const Footer = () => {
     { name: "About", href: "/about" },
     { name: "How it Works", href: "/how-it-works" },
     { name: "Pricing", href: "/pricing" },
-    // { name: "Partnership", href: "/partnership" },
+    { name: "Partnership", href: "/partnership" },
   ];
 
   const resourceLinks = [
@@ -19,7 +19,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "LinkedIn", href: "#" },
-    { name: "Instagram", href: "https://www.instagram.com/darylabs" },
+    { name: "Instagram", href: "https://www.instagram.com/bluesandstemlabs" },
     { name: "Twitter", href: "#" },
     { name: "Facebook", href: "#" },
     { name: "Tiktok", href: "#" },
@@ -133,7 +133,8 @@ const Footer = () => {
               <div>
                 <h4 className="font-semibold text-sm ">UGANDA</h4>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  Plot 29 Hancock Road Ntinda Kampala , Uganda
+                  Greenland Estate, House 10 Ogombo Rd, Subuola Abu St, Lagos
+                  Island, Sangotedo 105102, Lagos.
                 </p>
               </div>
               {/* <div>
@@ -152,7 +153,7 @@ const Footer = () => {
       <div className="bg-[#101828] border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
-            ©{new Date().getFullYear()} DaryLabs. All rights reserved.
+            ©2025 DaryLabs. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a

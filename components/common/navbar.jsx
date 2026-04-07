@@ -15,15 +15,15 @@ const navLinks = [
   { name: "How it works", href: "/how-it-works" },
   { name: "Simulations", href: "/simulations" },
   { name: "Pricing", href: "/pricing" },
-  // { name: "Partnership", href: "/partnerships" },
+  { name: "Partnership", href: "/partnerships" },
 
-  // {
-  //   name: "Insights",
-  //   dropdown: [
-  //     { name: "Blog", href: "/blog" },
-  //     // Future: { name: "Case Studies", href: "/case-studies" },
-  //   ],
-  // },
+  {
+    name: "Insights",
+    dropdown: [
+      { name: "Blog", href: "/blog" },
+      // Future: { name: "Case Studies", href: "/case-studies" },
+    ],
+  },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -90,7 +90,10 @@ export default function Navbar() {
       >
         {/* --- Top Banner --- */}
         <div className="bg-secondary flex items-center justify-center gap-1.5 py-2 px-3 text-center text-xs sm:text-sm">
-          <Link href="/auth/login" className="flex items-center gap-1">
+          <Link
+            href="/auth/login"
+            className="flex items-center gap-1"
+          >
             <p className="text-white font-medium">Sign up to get started now</p>
             <GoArrowRight className="text-white text-sm sm:text-base" />
           </Link>

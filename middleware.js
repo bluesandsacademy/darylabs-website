@@ -1,84 +1,28 @@
-import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
 
-export async function middleware(request) {
-  let response = NextResponse.next({
-    request,
-  });
-
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            request.cookies.set(name, value, options);
-          });
-          response = NextResponse.next({ request });
-          cookiesToSet.forEach(({ name, value, options }) => {
-            response.cookies.set(name, value, options);
-          });
-        },
-      },
-    },
-  );
-
-  // Refresh session if expired
-  let user = null;
-  try {
-    const { data } = await supabase.auth.getUser();
-    user = data.user;
-  } catch {
-    // If Supabase is unreachable, treat as unauthenticated
-  }
-
+export function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  // Public routes that don't require authentication
   const publicRoutes = [
     "/auth/login",
     "/auth/register",
-    "/auth/register-school",
-    "/auth/register-individual",
-    "/auth/callback",
-    "/auth/error",
     "/auth/forgot-password",
     "/auth/reset-password",
+    "/auth/verify-success",
+    "/",
   ];
 
   const isPublicRoute = publicRoutes.some((route) =>
-    pathname.startsWith(route),
+    route === "/" ? pathname === "/" : pathname.startsWith(route)
   );
 
-  // Redirect authenticated users away from auth pages
-  if (user && isPublicRoute && !pathname.includes("/auth/callback")) {
-    const userType = user.user_metadata?.user_type;
-
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
-  // Redirect unauthenticated users to login
-  const protectedPrefixes = ["/dashboard", "/school", "/admin", "/teacher", "/settings"];
-  const isProtectedRoute = protectedPrefixes.some((prefix) => pathname.startsWith(prefix));
-
-  if (!user && isProtectedRoute) {
-    return NextResponse.redirect(new URL("/auth/login", request.url));
-  }
-
-  return response;
+  // Auth check is handled client-side by AuthGuard / UserContext (localStorage-based JWT)
+  // Middleware just passes through — no Supabase dependency
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    "/dashboard/:path*",
-    "/school/:path*",
-    "/admin/:path*",
-    "/teacher/:path*",
-    "/settings/:path*",
-    "/auth/:path*",
+    "/((?!_next/static|_next/image|favicon.ico|public|images).*)",
   ],
 };

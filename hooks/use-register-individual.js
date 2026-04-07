@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { registerIndividual } from "@/app/actions/register-individual";
+import { registerIndividual } from "@/app/auth/register-individual/actions";
 
 export function useRegisterIndividual() {
   return useMutation({
