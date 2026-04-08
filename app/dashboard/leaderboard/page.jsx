@@ -5,6 +5,7 @@ import { getStudentLeaderboard } from "@/services/dashboard-service";
 import FilterButton from "@/services/FilterButton";
 import { useUser } from "@/services/UserContext";
 import { useEffect, useState } from "react";
+import { TableRowsSkeleton } from "@/components/ui/Skeleton";
 
 export default function DashboardLeaderboardPage() {
   const { user, token } = useUser();
@@ -34,9 +35,7 @@ export default function DashboardLeaderboardPage() {
         {leaderboardData ? (
           <p className="text-gray-500 text-sm">No leaderboard data yet.</p>
         ) : (
-          <div className="flex justify-center py-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-          </div>
+          <TableRowsSkeleton rows={6} />
         )}
       </div>
     </div>

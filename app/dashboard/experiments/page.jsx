@@ -8,6 +8,7 @@ import FilterButton from "@/services/FilterButton";
 import { useUser } from "@/services/UserContext";
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { CardGridSkeleton } from "@/components/ui/Skeleton";
 
 export default function DashboardExperimentsPage() {
   const [experimentData, setExperimentData] = useState([]);
@@ -115,11 +116,7 @@ export default function DashboardExperimentsPage() {
         onFilterChange={handleCourseFilterChange}
       />
 
-      {loading && (
-        <div className="flex justify-center items-center p-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        </div>
-      )}
+      {loading && <CardGridSkeleton count={6} />}
 
       {!loading && experimentData.length > 0 && (
         <>

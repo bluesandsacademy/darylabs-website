@@ -5,6 +5,7 @@ import { resetPassword } from "@/services/auth-service";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 import { FaSpinner } from "react-icons/fa";
+import { FormSkeleton } from "@/components/ui/Skeleton";
 
 function ResetPasswordContent() {
   const [formData, setFormData] = useState({ newPassword: "", confirmPassword: "" });
@@ -65,7 +66,12 @@ function ResetPasswordContent() {
 
 export default function ResetPasswordPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div></div>}>
+    <Suspense fallback={
+      <section className="min-h-screen p-3 mb-10">
+        <div className="w-full h-48 md:h-72 animate-pulse bg-gray-200 rounded-lg mb-4" />
+        <FormSkeleton fields={2} />
+      </section>
+    }>
       <ResetPasswordContent />
     </Suspense>
   );

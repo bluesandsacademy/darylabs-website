@@ -5,6 +5,7 @@ import { useUser } from "@/services/UserContext";
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import TeacherExperimentCard from "./TeacherExperimentCard";
+import { CardGridSkeleton } from "@/components/ui/Skeleton";
 
 const AssignExperiments = () => {
   const [experimentData, setExperimentData] = useState([]);
@@ -45,11 +46,7 @@ const AssignExperiments = () => {
         />
       </div>
 
-      {loading && (
-        <div className="flex justify-center p-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        </div>
-      )}
+      {loading && <CardGridSkeleton count={6} />}
 
       {!loading && (
         <div className="flex flex-wrap gap-4">
