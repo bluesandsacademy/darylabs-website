@@ -7,12 +7,12 @@ import NProgress from "nprogress";
 import { toast } from "react-hot-toast";
 import { Eye, EyeOff } from "lucide-react";
 import { useLogin } from "@/hooks/use-login";
-import { useAuth } from "@/providers/auth-provider";
+import { useUser } from "@/services/UserContext";
 
 export default function UserLogin() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
-  const { user, isLoading: isAuthLoading, isAuthenticated } = useAuth();
+  const { user, isLoggedIn } = useUser();
 
   useEffect(() => {
     document.title =
@@ -28,10 +28,10 @@ export default function UserLogin() {
 
   // Redirect if already logged in
   useEffect(() => {
-    if (!isAuthLoading && isAuthenticated && user) {
+    if (isLoggedIn && user) {
       redirectBasedOnRole(user.role);
     }
-  }, [isAuthLoading, isAuthenticated, user, router]);
+  }, [isLoggedIn, user, router]);
 
   const redirectBasedOnRole = (role) => {
     switch (role) {
@@ -83,18 +83,6 @@ export default function UserLogin() {
       }
     });
   };
-
-  // Show loading state while checking auth
-  if (isAuthLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

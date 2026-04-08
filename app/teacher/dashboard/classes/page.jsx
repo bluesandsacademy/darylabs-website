@@ -4,6 +4,7 @@ import { getClasses } from "@/services/dashboard-service";
 import { useUser } from "@/services/UserContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CardGridSkeleton } from "@/components/ui/Skeleton";
 
 export default function TeacherClassesPage() {
   const { token } = useUser();
@@ -37,9 +38,7 @@ export default function TeacherClassesPage() {
       </div>
 
       {loading ? (
-        <div className="flex justify-center p-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-        </div>
+        <CardGridSkeleton count={3} />
       ) : classes.length === 0 ? (
         <div className="bg-white rounded-xl p-6 text-center text-gray-500 text-sm">
           No classes yet. Create your first learning space.
