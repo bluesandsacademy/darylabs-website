@@ -1,16 +1,16 @@
 "use client";
 
-import { useAuth } from "@/lib/providers/auth-provider";
+import { useUser } from "@/services/UserContext";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
 export function useLogout() {
-  const { signOut } = useAuth();
+  const { logout } = useUser();
   const router = useRouter();
 
-  const logout = async () => {
+  const handleLogout = () => {
     try {
-      await signOut();
+      logout();
       toast.success("Logged out successfully");
       router.push("/auth/login");
     } catch (error) {
@@ -19,5 +19,5 @@ export function useLogout() {
     }
   };
 
-  return { logout };
+  return { logout: handleLogout };
 }

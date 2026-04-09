@@ -1,18 +1,25 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { registerSchool } from "@/app/actions/register-school";
+import { registerNewSchool } from "@/services/auth-service";
 
 export function useRegisterSchool() {
   return useMutation({
     mutationFn: async (formData) => {
-      const result = await registerSchool(formData);
+      const payload = {
+        fullName: formData.get("fullName"),
+        schoolName: formData.get("schoolName"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        position: formData.get("position"),
+        totalStudents: formData.get("totalStudents"),
+        country: formData.get("country"),
+        subdomain: formData.get("subdomain"),
+        password: formData.get("password"),
+        couponCode: formData.get("couponCode") || null,
+      };
 
-      if (result.error) {
-        throw new Error(result.error.message);
-      }
-
-      return result;
+      return await registerNewSchool(payload);
     },
   });
 }
