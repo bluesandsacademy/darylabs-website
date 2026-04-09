@@ -139,7 +139,7 @@ export default function NewPostModal({ isOpen, onClose }) {
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto">
       <div className="bg-white rounded-xl max-w-3xl w-full my-8 max-h-[95vh] flex flex-col">
         {/* Header */}
-        <div className="border-b border-gray-200 px-6 py-4 flex-shrink-0">
+        <div className="border-b border-gray-200 px-6 py-4 shrink-0">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
             <span>Home</span>
@@ -444,7 +444,7 @@ export default function NewPostModal({ isOpen, onClose }) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 px-6 py-4 flex items-center justify-between flex-shrink-0">
+        <div className="border-t border-gray-200 px-6 py-4 flex items-center justify-between shrink-0">
           <button
             onClick={handleReset}
             className="text-sm text-gray-600 hover:text-gray-900 font-medium"

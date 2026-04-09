@@ -15,7 +15,7 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-10 sm:py-10  px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-10 sm:py-10  px-4 sm:px-6 lg:px-8 bg-linear-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -146,7 +146,7 @@ const BlogSection = () => {
                   >
                     <span>{article.title}</span>
                     <svg
-                      className="w-5 h-5 flex-shrink-0 transform group-hover:translate-x-1 
+                      className="w-5 h-5 shrink-0 transform group-hover:translate-x-1 
                                group-hover:-translate-y-1 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"

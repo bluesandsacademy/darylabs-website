@@ -28,7 +28,7 @@ export default function PartnershipDesk() {
 
   return (
     <section className="w-full bg-white py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-secondary tracking-tight text-center mb-12 md:mb-16">
           Partnership & Event Desk
@@ -68,7 +68,7 @@ function ContactCard({ contact, useImage = false }) {
         {/* Phone */}
         <a
           href={`tel:${contact.phone.replace(/\s/g, "")}`}
-          className="text-foreground/60 text-sm md:text-base hover:text-primary transition-colors block font-light"
+          className="text-gray-600 text-sm md:text-base hover:text-primary transition-colors block font-light"
         >
           {contact.phone}
         </a>
@@ -76,7 +76,7 @@ function ContactCard({ contact, useImage = false }) {
         {/* Email */}
         <a
           href={`mailto:${contact.email}`}
-          className="text-foreground/60 text-sm md:text-base hover:text-primary transition-colors block font-light break-all"
+          className="text-gray-600 text-sm md:text-base hover:text-primary transition-colors block font-light break-all"
         >
           {contact.email}
         </a>

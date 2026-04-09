@@ -101,7 +101,7 @@ export const FeatureCard = ({ feature, index, total }) => {
           <motion.div
             className={`${
               isEven ? "lg:order-1 lg:col-span-3" : "lg:order-2 lg:col-span-3"
-            } relative overflow-hidden bg-gradient-to-br ${feature.bgGradient}`}
+            } relative overflow-hidden bg-linear-to-br ${feature.bgGradient}`}
             style={{
               y: useTransform(scrollYProgress, [0, 1], [0, -50]),
             }}
@@ -127,7 +127,7 @@ export const FeatureCard = ({ feature, index, total }) => {
 
             {/* Gradient overlay for better image-text transition */}
             <div
-              className={`absolute inset-0 bg-gradient-to-${
+              className={`absolute inset-0 bg-linear-to-${
                 isEven ? "r" : "l"
               } from-transparent via-transparent to-white/10 pointer-events-none`}
             />
@@ -155,12 +155,12 @@ export const FeatureCard = ({ feature, index, total }) => {
                 }}
               >
                 <div
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-bold text-sm"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-linear-to-br from-primary to-secondary text-white font-bold text-sm"
                   style={{ fontFamily: "var(--font-jarkata)" }}
                 >
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
+                <div className="h-px w-12 bg-linear-to-r from-primary to-transparent" />
               </motion.div>
 
               {/* Title */}
@@ -207,7 +207,7 @@ export const FeatureCard = ({ feature, index, total }) => {
                 >
                   {feature.keyPoints.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <div className="shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
                         <svg
                           className="w-3 h-3 text-primary"
                           fill="currentColor"
@@ -243,8 +243,8 @@ export const FeatureCard = ({ feature, index, total }) => {
                 }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="h-1 w-16 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                  <div className="h-1 w-8 bg-gradient-to-r from-secondary to-transparent rounded-full" />
+                  <div className="h-1 w-16 bg-linear-to-r from-primary to-secondary rounded-full" />
+                  <div className="h-1 w-8 bg-linear-to-r from-secondary to-transparent rounded-full" />
                 </div>
               </motion.div>
             </div>

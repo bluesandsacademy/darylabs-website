@@ -30,7 +30,7 @@ export default function AseeHero() {
         </div>
       </div>
 
-      <div className="max-w-8xl mx-auto w-full px-4 sm:px-6 lg:px-16 py-16 md:py-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-16 py-16 md:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="relative z-10 space-y-6 text-center lg:text-left">

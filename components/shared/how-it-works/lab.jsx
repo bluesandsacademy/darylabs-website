@@ -12,7 +12,7 @@ export default function VirtualLabVideoSection() {
   };
 
   return (
-    <section className="relative bg-primary overflow-hidden py-20 lg:py-32">
+    <section className="relative bg-primary overflow-hidden py-16 sm:py-20 lg:py-24">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ export default function VirtualLabVideoSection() {
         </svg>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Video Container */}
         <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
           {/* Video Thumbnail/Player */}
@@ -48,7 +48,7 @@ export default function VirtualLabVideoSection() {
             />
 
             {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
 
             {/* Play Button */}
             {!isPlaying && (

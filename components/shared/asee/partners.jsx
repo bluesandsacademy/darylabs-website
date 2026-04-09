@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export default function PartnersSection() {
   return (
-    <section className="w-full bg-white py-16 md:py-20">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-4 md:mb-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-700 tracking-tight">
             Our Partners
           </h2>
 
-          <p className="text-foreground/60 text-base md:text-lg font-light">
+          <p className="text-gray-600 text-base md:text-lg font-light">
             Want to be on this wall? → see partnership contacts below.
           </p>
         </div>

@@ -32,7 +32,7 @@ export default function WhyPartnerSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0D3B5C] py-10 lg:py-12">
+    <section className="relative overflow-hidden bg-[#0D3B5C] py-16 sm:py-20 lg:py-24">
       {/* Grid Background Pattern */}
       <div
         className="absolute inset-0 opacity-30"
@@ -48,7 +48,7 @@ export default function WhyPartnerSection() {
       {/* Subtle Radial Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/20" />
 
-      <div className="relative container mx-auto px-6 lg:px-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Left Column - Image */}
           <motion.div
@@ -73,7 +73,7 @@ export default function WhyPartnerSection() {
                 </div>
               </div>
 
-              <div className="absolute -inset-4 bg-gradient-to-br from-white/10 to-transparent blur-2xl -z-10 rounded-[3rem]" />
+              <div className="absolute -inset-4 bg-linear-to-br from-white/10 to-transparent blur-2xl -z-10 rounded-[3rem]" />
             </div>
           </motion.div>
 
@@ -116,7 +116,7 @@ export default function WhyPartnerSection() {
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   className="flex gap-3 group"
                 >
-                  <div className="flex-shrink-0 w-1 bg-gradient-to-b from-white/60 via-white/40 to-transparent rounded-full" />
+                  <div className="shrink-0 w-1 bg-linear-to-b from-white/60 via-white/40 to-transparent rounded-full" />
                   <div className="flex-1 space-y-0.5">
                     <h3 className="text-base lg:text-lg font-semibold text-white">
                       {reason.title}:
@@ -132,7 +132,7 @@ export default function WhyPartnerSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
     </section>
   );
 }

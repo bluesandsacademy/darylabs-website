@@ -110,7 +110,7 @@ export default function WhoShouldAttend() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-primary via-primary to-primary/90 py-16 md:py-24">
+    <section className="w-full bg-linear-to-br from-primary via-primary to-primary/90 py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white text-center mb-12 md:mb-16 tracking-tight">
@@ -152,7 +152,7 @@ function AttendeeCard({ attendee }) {
       </h3>
 
       {/* Description */}
-      <p className="text-foreground/60 text-sm md:text-base leading-relaxed font-light">
+      <p className="text-gray-600 text-sm md:text-base leading-relaxed font-light">
         {attendee.description}
       </p>
     </article>

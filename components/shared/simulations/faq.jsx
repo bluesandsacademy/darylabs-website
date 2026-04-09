@@ -117,7 +117,7 @@ const FAQ = () => {
 
                 {/* Toggle Icon */}
                 <motion.div
-                  className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center"
+                  className="shrink-0 w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center"
                   animate={{
                     rotate: openIndex === index ? 180 : 0,
                     scale: openIndex === index ? 1.1 : 1,

@@ -22,7 +22,7 @@ export default function TypicalWeekSection() {
   ];
 
   return (
-    <section className="relative py-20 bg-primary overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-primary overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ export default function TypicalWeekSection() {
         </svg>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-8">

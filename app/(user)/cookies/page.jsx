@@ -92,14 +92,14 @@ export default function CookiesPolicy() {
   return (
     <main className="w-full bg-white">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
+      <section className="w-full bg-linear-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight">
               Cookies Policy
             </h1>
-            <p className="text-base md:text-lg font-light text-foreground/60">
-              <span className="font-normal text-foreground/80">
+            <p className="text-base md:text-lg font-light text-gray-600">
+              <span className="font-normal text-gray-700">
                 Effective Date:
               </span>{" "}
               {effectiveDate}
@@ -131,7 +131,7 @@ export default function CookiesPolicy() {
                 <div className="space-y-4">
                   {/* Main Content */}
                   {section.content && (
-                    <p className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                       {section.content}
                     </p>
                   )}
@@ -143,8 +143,8 @@ export default function CookiesPolicy() {
                         <li key={idx} className="space-y-2">
                           {/* Main bullet point */}
                           <div className="flex gap-3 items-start">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 flex-shrink-0" />
-                            <span className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 shrink-0" />
+                            <span className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                               {item.main}
                             </span>
                           </div>
@@ -157,8 +157,8 @@ export default function CookiesPolicy() {
                                   key={subIdx}
                                   className="flex gap-3 items-start"
                                 >
-                                  <span className="w-1 h-1 rounded-full bg-primary/30 mt-2.5 flex-shrink-0" />
-                                  <span className="text-sm md:text-base leading-relaxed text-foreground/60 font-light">
+                                  <span className="w-1 h-1 rounded-full bg-primary/30 mt-2.5 shrink-0" />
+                                  <span className="text-sm md:text-base leading-relaxed text-gray-600 font-light">
                                     {subItem}
                                   </span>
                                 </li>
@@ -172,7 +172,7 @@ export default function CookiesPolicy() {
 
                   {/* Sub Content (appears after list if present) */}
                   {section.subContent && (
-                    <p className="text-base md:text-lg leading-relaxed text-foreground/70 font-light mt-4 pl-0 md:pl-6">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-600 font-light mt-4 pl-0 md:pl-6">
                       {section.subContent}
                     </p>
                   )}

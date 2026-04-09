@@ -98,7 +98,7 @@ export default function SimpleSetupSection() {
               {/* Arrow (not after last item) */}
               {index < setupSteps.length - 1 && (
                 <ArrowRight
-                  className="hidden lg:block text-white/50 flex-shrink-0 mb-12"
+                  className="hidden lg:block text-white/50 shrink-0 mb-12"
                   size={40}
                   strokeWidth={2.5}
                 />

@@ -96,7 +96,7 @@ export const FeatureCard = ({ feature, index }) => {
           <motion.div
             className={`${
               isEven ? "lg:order-1" : "lg:order-2"
-            } relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100`}
+            } relative overflow-hidden bg-linear-to-br from-gray-50 to-gray-100`}
             style={{
               y: useTransform(scrollYProgress, [0, 1], [0, -30]),
             }}
@@ -122,7 +122,7 @@ export const FeatureCard = ({ feature, index }) => {
             </motion.div>
 
             <div
-              className={`absolute inset-0 bg-gradient-to-${
+              className={`absolute inset-0 bg-linear-to-${
                 isEven ? "r" : "l"
               } from-transparent via-transparent to-white/10 pointer-events-none`}
             />
@@ -176,7 +176,7 @@ export const FeatureCard = ({ feature, index }) => {
                 >
                   {feature.keyPoints.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#0A7FFF]/10 flex items-center justify-center mt-0.5">
+                      <div className="shrink-0 w-5 h-5 rounded-full bg-[#0A7FFF]/10 flex items-center justify-center mt-0.5">
                         <svg
                           className="w-3 h-3 text-[#0A7FFF]"
                           fill="currentColor"

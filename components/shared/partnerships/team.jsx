@@ -22,8 +22,8 @@ export default function PartnershipTeam() {
   ];
 
   return (
-    <section className="bg-[#F9FAFB] py-8 lg:py-16">
-      <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
+    <section className="bg-[#F9FAFB] py-16 sm:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

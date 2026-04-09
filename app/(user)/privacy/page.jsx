@@ -170,27 +170,27 @@ export default function PrivacyPolicy() {
   return (
     <main className="w-full bg-white">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
+      <section className="w-full bg-linear-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight">
               Privacy Policy (DPPA-Aligned)
             </h1>
-            <div className="space-y-2 text-foreground/60">
+            <div className="space-y-2 text-gray-600">
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">
+                <span className="font-normal text-gray-700">
                   Effective Date:
                 </span>{" "}
                 {effectiveDate}
               </p>
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">
+                <span className="font-normal text-gray-700">
                   Controller (Company):
                 </span>{" "}
                 {controller}
               </p>
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">Contact:</span>{" "}
+                <span className="font-normal text-gray-700">Contact:</span>{" "}
                 <a
                   href={`mailto:${email}`}
                   className="text-primary hover:text-primary/80 transition-colors"
@@ -199,7 +199,7 @@ export default function PrivacyPolicy() {
                 </a>
               </p>
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">
+                <span className="font-normal text-gray-700">
                   Data Protection Officer (DPO) [Ghana]:
                 </span>{" "}
                 <a
@@ -236,7 +236,7 @@ export default function PrivacyPolicy() {
                 {/* Content */}
                 <div className="space-y-4">
                   {/* Main Content */}
-                  <p className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                  <p className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                     {section.content}
                   </p>
 
@@ -247,8 +247,8 @@ export default function PrivacyPolicy() {
                         <li key={idx} className="space-y-2">
                           {/* Main bullet point */}
                           <div className="flex gap-3 items-start">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 flex-shrink-0" />
-                            <span className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 shrink-0" />
+                            <span className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                               {item.main}
                             </span>
                           </div>
@@ -261,8 +261,8 @@ export default function PrivacyPolicy() {
                                   key={subIdx}
                                   className="flex gap-3 items-start"
                                 >
-                                  <span className="w-1 h-1 rounded-full bg-primary/30 mt-2.5 flex-shrink-0" />
-                                  <span className="text-sm md:text-base leading-relaxed text-foreground/60 font-light">
+                                  <span className="w-1 h-1 rounded-full bg-primary/30 mt-2.5 shrink-0" />
+                                  <span className="text-sm md:text-base leading-relaxed text-gray-600 font-light">
                                     {subItem}
                                   </span>
                                 </li>
@@ -276,7 +276,7 @@ export default function PrivacyPolicy() {
 
                   {/* Sub Content (appears after list if present) */}
                   {section.subContent && (
-                    <p className="text-base md:text-lg leading-relaxed text-foreground/70 font-light mt-4 pl-0 md:pl-6">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-600 font-light mt-4 pl-0 md:pl-6">
                       {section.subContent}
                     </p>
                   )}
@@ -286,12 +286,12 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Data Rights Information Box */}
-          <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
+          <div className="mt-16 p-8 rounded-2xl bg-linear-to-br from-primary/5 to-secondary/5 border border-primary/10">
             <div className="space-y-4">
               <h3 className="text-xl md:text-2xl font-normal text-secondary">
                 Your Data Protection Rights
               </h3>
-              <p className="text-base text-foreground/60 font-light leading-relaxed">
+              <p className="text-base text-gray-600 font-light leading-relaxed">
                 Under the Ghana Data Protection Regulation (NDPR) and Ghana Data
                 Protection Act (NDPA), you have rights regarding your personal
                 data. You can access, correct, delete, or restrict the
@@ -317,7 +317,7 @@ export default function PrivacyPolicy() {
 
           {/* Regulatory Information */}
           <div className="mt-8 p-6 rounded-xl bg-secondary/5 border border-secondary/10">
-            <p className="text-sm md:text-base text-foreground/60 font-light leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 font-light leading-relaxed">
               <span className="font-normal text-secondary">
                 Regulatory Authority:
               </span>{" "}

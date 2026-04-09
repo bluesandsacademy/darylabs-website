@@ -1,7 +1,7 @@
 export default function OfficeHours() {
   return (
-    <section className="py-16 px-6 bg-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Image */}
           <div className="relative">
@@ -22,12 +22,12 @@ export default function OfficeHours() {
 
             <div className="space-y-6">
               <div className="flex items-start gap-3">
-                <div className="w-1 h-6 bg-primary flex-shrink-0 mt-1"></div>
+                <div className="w-1 h-6 bg-primary shrink-0 mt-1"></div>
                 <p className="text-lg">Hours: Mon-Fri, 9:00-17:00 WAT</p>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-1 h-6 bg-primary flex-shrink-0 mt-1"></div>
+                <div className="w-1 h-6 bg-primary shrink-0 mt-1"></div>
                 <p className="text-lg">
                   Timezone supported for demos: WAT, GMT, EAT, CAT (others by
                   request)
@@ -35,14 +35,14 @@ export default function OfficeHours() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-1 h-6 bg-primary flex-shrink-0 mt-1"></div>
+                <div className="w-1 h-6 bg-primary shrink-0 mt-1"></div>
                 <p className="text-lg">
                   Mailing address: (Add your registered address here)
                 </p>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-1 h-6 bg-primary flex-shrink-0 mt-1"></div>
+                <div className="w-1 h-6 bg-primary shrink-0 mt-1"></div>
                 <p className="text-lg">
                   Phone (general): (Add your contact number if available)
                 </p>

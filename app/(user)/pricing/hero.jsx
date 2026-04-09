@@ -9,7 +9,7 @@ const PricingHeader = () => {
         <Image src="/grid.png" alt="" fill className="object-cover" priority />
       </div>
 
-      <div className="max-w-8xl w-full mx-auto px-4 sm:px-6 lg:px-12 py-8 md:py-10 relative z-10">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="max-w-2xl">

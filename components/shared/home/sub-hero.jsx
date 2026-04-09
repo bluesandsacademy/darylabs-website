@@ -96,8 +96,8 @@ const SubHero = () => {
   };
 
   return (
-    <div className="w-full bg-[#f8f9fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-8xl md:max-h-[80vh] mx-auto">
+    <div className="w-full overflow-x-hidden bg-[#f8f9fb] py-16 sm:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -107,15 +107,13 @@ const SubHero = () => {
           className="text-center mb-16 sm:mb-20"
         >
           <h1
-            className="font-bold text-4xl sm:text-5xl lg:text-[56px] text-secondary leading-tight mb-4"
-            style={{ fontFamily: "var(--font-jarkata)" }}
+            className="font-bold text-4xl sm:text-5xl lg:text-6xl text-secondary leading-tight mb-4"
           >
             Transforming African STEM Education
           </h1>
 
           <p
-            className="font-normal text-lg sm:text-xl text-[#6b7280] max-w-3xl mx-auto"
-            style={{ fontFamily: "var(--font-jarkata)" }}
+            className="font-normal text-xl text-gray-600 max-w-3xl mx-auto"
           >
             Addressing the unique challenges facing African schools and students
           </p>
@@ -127,12 +125,12 @@ const SubHero = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-2 items-center  max-w-6xl"
+          className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_2fr] gap-6 sm:gap-10 lg:gap-8 items-center"
         >
           {/* Column 1 - First 3 Country Flags and Stats */}
           <motion.div
             variants={containerVariants}
-            className="flex flex-row md:flex-col items-center lg:items-end gap-6"
+            className="flex flex-col items-center gap-6"
           >
             {stats.slice(0, 3).map((stat, index) => (
               <motion.div
@@ -142,7 +140,7 @@ const SubHero = () => {
                   x: -10,
                   transition: { duration: 0.3 },
                 }}
-                className="flex md:flex-col  items-center gap-4 w-full max-w-[280px] lg:max-w-none"
+                className="flex flex-col items-center gap-3 w-full"
               >
                 {/* Flag Circle - Half Size */}
                 <motion.div
@@ -165,7 +163,6 @@ const SubHero = () => {
                 {/* Percentage */}
                 <motion.h3
                   className="text-primary text-lg sm:text-lg md:text-xl font-bold"
-                  style={{ fontFamily: "var(--font-jarkata)" }}
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -185,7 +182,7 @@ const SubHero = () => {
           {stats.length > 3 && (
             <motion.div
               variants={containerVariants}
-              className="flex flex-row md:flex-col items-center justify-center gap-6"
+              className="flex flex-col items-center gap-6"
             >
               {stats.slice(3).map((stat, index) => (
                 <motion.div
@@ -218,7 +215,6 @@ const SubHero = () => {
                   {/* Percentage */}
                   <motion.h3
                     className="text-primary text-lg sm:text-xl font-bold"
-                    style={{ fontFamily: "var(--font-jarkata)" }}
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
@@ -239,11 +235,10 @@ const SubHero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex items-center justify-center lg:justify-start"
+            className="col-span-2 lg:col-span-1 flex items-center justify-center"
           >
             <p
-              className="text-[#6b7280] text-sm sm:text-base text-center lg:text-left leading-relaxed font-normal max-w-[250px]"
-              style={{ fontFamily: "var(--font-jarkata)" }}
+              className="text-gray-600 text-sm sm:text-base text-center leading-relaxed font-normal max-w-[220px]"
             >
               secondary schools lack adequate laboratory infrastructure
             </p>
@@ -251,9 +246,9 @@ const SubHero = () => {
           {/* Column 3 - Africa Map */}
           <motion.div
             variants={mapVariants}
-            className="flex items-center justify-center"
+            className="col-span-2 lg:col-span-1 flex items-center justify-center"
           >
-            <div className="relative w-full max-w-[280px] aspect-4/5">
+            <div className="relative w-full max-w-[180px] sm:max-w-60 aspect-4/5">
               <Image
                 src="/map.png"
                 alt="Africa map"
@@ -269,7 +264,7 @@ const SubHero = () => {
           {/* Column 5 - Impact Statistics */}
           <motion.div
             variants={containerVariants}
-            className="flex flex-col items-center lg:items-start gap-6 lg:gap-8"
+            className="col-span-2 lg:col-span-1 flex flex-col items-start gap-6 w-full max-w-sm lg:max-w-none mx-auto lg:mx-0"
           >
             {statistics.map((stat, index) => (
               <motion.div
@@ -279,12 +274,11 @@ const SubHero = () => {
                   x: 10,
                   transition: { duration: 0.3 },
                 }}
-                className="flex items-start gap-3 lg:gap-4 w-full md:w-[500px]"
+                className="flex items-start gap-3 w-full"
               >
                 {/* Percentage */}
                 <motion.h3
-                  className="text-primary text-lg sm:text-xl lg:text-[30px] font-bold shrink-0 min-w-[100px] lg:min-w-[120px]"
-                  style={{ fontFamily: "var(--font-jarkata)" }}
+                  className="text-primary text-lg sm:text-xl lg:text-2xl font-bold shrink-0 min-w-[100px] lg:min-w-[110px]"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -299,8 +293,7 @@ const SubHero = () => {
 
                 {/* Description Text */}
                 <motion.p
-                  className="text-[#6b7280] text-sm sm:text-base lg:text-base leading-relaxed font-normal pt-1"
-                  style={{ fontFamily: "var(--font-jarkata)" }}
+                  className="text-gray-600 text-xs sm:text-sm leading-relaxed font-normal pt-1"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}

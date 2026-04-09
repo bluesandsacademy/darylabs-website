@@ -74,7 +74,7 @@ export default function ContactHero() {
         </svg>
       </div>
 
-      <div className="max-w-8xl mx-auto px-6 lg:px-8 py-20 lg:py-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="relative z-10">

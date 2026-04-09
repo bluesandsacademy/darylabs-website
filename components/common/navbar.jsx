@@ -100,7 +100,8 @@ export default function Navbar() {
         </div>
 
         {/* --- Main Navigation --- */}
-        <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3 sm:py-4 shadow-sm">
+        <nav className="shadow-sm py-3 sm:py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -173,7 +174,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             <Link
               href="/auth/login"
-              className="px-5 py-2 border-primary text-primary text-sm font-medium rounded-lg  transition-all  hover:shadow-lg"
+              className="px-5 py-2 border border-primary text-primary text-sm font-medium rounded-lg transition-all hover:shadow-lg"
             >
               Sign in
             </Link>
@@ -197,6 +198,7 @@ export default function Navbar() {
               <HiMenuAlt3 className="h-6 w-6 sm:h-7 sm:w-7" />
             )}
           </button>
+          </div>
         </nav>
       </header>
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function EmpoweringFutureSection() {
   return (
-    <section className="relative py-10 lg:py-12 bg-primary overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-primary overflow-hidden">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <Image src="/grid.png" alt="" fill className="object-cover" priority />
@@ -16,7 +16,7 @@ export default function EmpoweringFutureSection() {
       <div className="absolute top-1/4 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
