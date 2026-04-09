@@ -6,7 +6,7 @@
 
 export default function HeroCTA() {
   return (
-    <section className="relative w-full bg-gradient-to-br from-primary to-secondary py-10 md:py-12 lg:py-20 overflow-hidden">
+    <section className="relative w-full bg-linear-to-br from-primary to-secondary py-10 md:py-12 lg:py-20 overflow-hidden">
       {/* Grid Background Pattern */}
       <div
         className="absolute inset-0 opacity-10"
@@ -17,7 +17,7 @@ export default function HeroCTA() {
       />
 
       {/* Gradient Overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/20" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-primary/20" />
 
       {/* Content */}
       <div className="relative container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">

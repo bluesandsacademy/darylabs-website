@@ -542,7 +542,7 @@ const HeroSlider = () => {
         </div>
       )}
 
-      <div className="max-w-8xl w-full mx-auto px-4 sm:px-6 lg:px-12  md:py-10 relative z-10">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8  md:py-10 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}

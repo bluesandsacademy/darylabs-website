@@ -25,8 +25,8 @@ export default function MilestonesSection() {
   ];
 
   return (
-    <section className="bg-background py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-background py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl font-bold text-secondary text-center mb-6">
           Our Milestones
@@ -54,7 +54,7 @@ export default function MilestonesSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {milestone.description}
                 </p>
               </div>

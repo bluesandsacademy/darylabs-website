@@ -93,7 +93,7 @@ const PricingSection = () => {
                     transition={{ delay: 0.3 + featureIndex * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <div className="flex-shrink-0 mt-0.5">
+                    <div className="shrink-0 mt-0.5">
                       <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
                         <Check className="w-3.5 h-3.5 text-primary" />
                       </div>

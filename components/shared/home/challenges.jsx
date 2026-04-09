@@ -9,7 +9,7 @@ const STEMChallengesSection = () => {
   const [activeChallenge, setActiveChallenge] = useState(0);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary via-[#024570] to-secondary relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-secondary via-[#024570] to-secondary relative overflow-hidden">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

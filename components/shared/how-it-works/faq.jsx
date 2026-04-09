@@ -34,8 +34,8 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-3">
@@ -57,7 +57,7 @@ export default function FAQSection() {
                 <span className="text-base lg:text-lg font-semibold text-secondary pr-8">
                   {faq.question}
                 </span>
-                <div className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center">
+                <div className="shrink-0 w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center">
                   {openIndex === index ? (
                     <Minus className="w-4 h-4 text-primary" strokeWidth={2.5} />
                   ) : (

@@ -125,7 +125,7 @@ export default function TechnicalHighlightsSection() {
                       className="flex items-start gap-3"
                     >
                       {/* Checkmark */}
-                      <div className="flex-shrink-0 w-6 h-6 mt-0.5">
+                      <div className="shrink-0 w-6 h-6 mt-0.5">
                         <svg
                           className="w-6 h-6 text-primary"
                           fill="none"
@@ -196,7 +196,7 @@ export default function TechnicalHighlightsSection() {
                       className="flex items-start gap-3"
                     >
                       {/* Checkmark */}
-                      <div className="flex-shrink-0 w-6 h-6 mt-0.5">
+                      <div className="shrink-0 w-6 h-6 mt-0.5">
                         <svg
                           className="w-6 h-6 text-primary"
                           fill="none"
@@ -233,7 +233,7 @@ export default function TechnicalHighlightsSection() {
                       className="flex items-start gap-3"
                     >
                       {/* Checkmark */}
-                      <div className="flex-shrink-0 w-6 h-6 mt-0.5">
+                      <div className="shrink-0 w-6 h-6 mt-0.5">
                         <svg
                           className="w-6 h-6 text-primary"
                           fill="none"

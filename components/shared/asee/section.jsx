@@ -43,7 +43,7 @@ export default function AseeSection() {
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-light text-secondary tracking-tight">
                 What is ASEE?
               </h2>
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed font-light">
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                 ASEE (Africa STEM EdTech Expo) is DaryLabs' showcase and meet-up
                 for everyone building the future of science education in Africa.
                 Think of it as a one-day testbed where real teachers, students,
@@ -60,8 +60,8 @@ export default function AseeSection() {
               </h3>
               <ul className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-primary mt-1.5 flex-shrink-0">•</span>
-                  <span className="text-foreground/70 text-base md:text-lg leading-relaxed font-light">
+                  <span className="text-primary mt-1.5 shrink-0">•</span>
+                  <span className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                     <strong className="font-medium text-foreground">
                       Purpose:
                     </strong>{" "}
@@ -71,8 +71,8 @@ export default function AseeSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-primary mt-1.5 flex-shrink-0">•</span>
-                  <span className="text-foreground/70 text-base md:text-lg leading-relaxed font-light">
+                  <span className="text-primary mt-1.5 shrink-0">•</span>
+                  <span className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                     <strong className="font-medium text-foreground">
                       Focus:
                     </strong>{" "}

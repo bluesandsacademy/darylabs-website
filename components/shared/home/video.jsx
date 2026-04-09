@@ -23,7 +23,7 @@ const VideoSection = () => {
           {/* Video Player Container */}
           <div className="relative w-full max-w-6xl mx-auto">
             {/* Device Frame */}
-            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] p-2 sm:p-3 lg:p-4 shadow-2xl">
+            <div className="relative bg-linear-to-br from-gray-900 to-gray-800 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] p-2 sm:p-3 lg:p-4 shadow-2xl">
               {/* Screen Bezel */}
               <div className="relative bg-black rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] p-1.5 sm:p-2 lg:p-3">
                 {/* Video Container */}
@@ -39,7 +39,7 @@ const VideoSection = () => {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
 
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">

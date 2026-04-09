@@ -24,9 +24,9 @@ const PasswordStrength = ({ password }) => {
       {rules.map(({ label, pass }) => (
         <li key={label} className="flex items-center gap-1.5 text-xs">
           {pass ? (
-            <Check className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+            <Check className="w-3.5 h-3.5 text-green-500 shrink-0" />
           ) : (
-            <X className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+            <X className="w-3.5 h-3.5 text-red-400 shrink-0" />
           )}
           <span className={pass ? "text-green-600" : "text-gray-400"}>
             {label}

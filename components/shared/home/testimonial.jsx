@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
 
               {/* Play Button - Simple Circle */}
               <div className="absolute inset-0 flex items-center justify-center">

@@ -32,7 +32,7 @@ export default function StatCards({ stats, isLoading = false }) {
               </h3>
               <p className="text-lg md:text-xl font-semibold text-gray-900">{stat.value}</p>
             </div>
-            <div className="flex-shrink-0 ml-2">
+            <div className="shrink-0 ml-2">
               <img src={stat.icon} alt="" className="w-8 h-8 md:w-10 md:h-10" />
             </div>
           </div>

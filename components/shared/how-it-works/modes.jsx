@@ -21,8 +21,8 @@ export default function CompareModesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4 relative inline-block">

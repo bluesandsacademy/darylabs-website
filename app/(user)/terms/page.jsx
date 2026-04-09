@@ -128,22 +128,22 @@ export default function TermsAndConditions() {
   return (
     <main className="w-full bg-white">
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
+      <section className="w-full bg-linear-to-br from-secondary/5 to-primary/5 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight">
               Website Terms & Conditions
             </h1>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-foreground/60">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-gray-600">
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">
+                <span className="font-normal text-gray-700">
                   Effective Date:
                 </span>{" "}
                 {effectiveDate}
               </p>
               <span className="hidden sm:block w-1 h-1 rounded-full bg-primary/40" />
               <p className="text-base md:text-lg font-light">
-                <span className="font-normal text-foreground/80">
+                <span className="font-normal text-gray-700">
                   Operator:
                 </span>{" "}
                 DaryLab (
@@ -156,8 +156,8 @@ export default function TermsAndConditions() {
                 , 'we', 'our', 'us')
               </p>
             </div>
-            <p className="text-base md:text-lg font-light text-foreground/60 pt-2">
-              <span className="font-normal text-foreground/80">Contact:</span>{" "}
+            <p className="text-base md:text-lg font-light text-gray-600 pt-2">
+              <span className="font-normal text-gray-700">Contact:</span>{" "}
               <a
                 href={`mailto:${contactEmail}`}
                 className="text-primary hover:text-primary/80 transition-colors"
@@ -190,7 +190,7 @@ export default function TermsAndConditions() {
 
                 {/* Content */}
                 <div className="space-y-4">
-                  <p className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                  <p className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                     {section.content}
                   </p>
 
@@ -199,8 +199,8 @@ export default function TermsAndConditions() {
                     <ul className="space-y-3 mt-4">
                       {section.list.map((item, idx) => (
                         <li key={idx} className="flex gap-3 items-start">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 flex-shrink-0" />
-                          <span className="text-base md:text-lg leading-relaxed text-foreground/70 font-light">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 shrink-0" />
+                          <span className="text-base md:text-lg leading-relaxed text-gray-600 font-light">
                             {item}
                           </span>
                         </li>
@@ -213,13 +213,13 @@ export default function TermsAndConditions() {
           </div>
 
           {/* Bottom Contact Section */}
-          <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
+          <div className="mt-16 p-8 rounded-2xl bg-linear-to-br from-primary/5 to-secondary/5 border border-primary/10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h3 className="text-xl md:text-2xl font-normal text-secondary mb-2">
                   Questions about these terms?
                 </h3>
-                <p className="text-base text-foreground/60 font-light">
+                <p className="text-base text-gray-600 font-light">
                   We're here to help clarify anything you need.
                 </p>
               </div>

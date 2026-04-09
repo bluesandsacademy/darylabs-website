@@ -25,7 +25,7 @@ const ArticleCard = ({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {/* Blue tint gradient overlay at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary/40 via-primary/10 to-transparent pointer-events-none" />
       </div>
 
       {/* Author and Date */}
@@ -40,7 +40,7 @@ const ArticleCard = ({
         <h3 className="text-2xl md:text-3xl font-bold text-secondary leading-tight flex-1 group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
-        <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+        <div className="shrink-0 w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
           <ArrowUpRight className="w-5 h-5" />
         </div>
       </div>

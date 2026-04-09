@@ -92,7 +92,7 @@ export default function EventHighlight() {
               {highlights.map((highlight, index) => (
                 <li key={index} className="flex gap-3 items-start">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-2.5 shrink-0" />
-                  <span className="text-foreground/60 text-base md:text-lg leading-relaxed font-light">
+                  <span className="text-gray-600 text-base md:text-lg leading-relaxed font-light">
                     {highlight}
                   </span>
                 </li>

@@ -24,7 +24,7 @@ const SolutionWorksHero = () => {
             />
 
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 sm:gap-8">

@@ -123,7 +123,7 @@ export default function ForSchoolsSection() {
                       className="flex items-start gap-4"
                     >
                       {/* Checkmark Circle */}
-                      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center mt-0.5">
+                      <div className="shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center mt-0.5">
                         <svg
                           className="w-4 h-4 text-primary"
                           fill="none"
@@ -175,7 +175,7 @@ export default function ForSchoolsSection() {
                     className="flex items-start gap-4"
                   >
                     {/* Checkmark Circle */}
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center mt-0.5">
+                    <div className="shrink-0 w-7 h-7 rounded-full bg-white flex items-center justify-center mt-0.5">
                       <svg
                         className="w-4 h-4 text-primary"
                         fill="none"

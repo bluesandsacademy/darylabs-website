@@ -60,7 +60,7 @@ const DashboardRewardsPage = () => {
           ) : (
             rewardsData.map((reward, index) => (
               <div key={index} className="p-4 px-8 relative bg-violet-800 w-max rounded-md flex flex-col gap-2 items-center justify-center text-center">
-                <div className="absolute rounded-full bg-gradient-to-b from-purple-700 to-purple-950 text-white text-xs p-2 top-2 left-2">
+                <div className="absolute rounded-full bg-linear-to-b from-purple-700 to-purple-950 text-white text-xs p-2 top-2 left-2">
                   <p>Common</p>
                 </div>
                 <div className="flex items-center justify-center p-2 bg-violet-600 rounded-md text-white text-xl">

@@ -22,8 +22,8 @@ export default function ThreeQuickPaths() {
   ];
 
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl lg:text-5xl font-bold text-secondary text-center mb-16">
           Three Quick Paths
         </h2>

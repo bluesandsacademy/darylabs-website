@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function PartnershipsHeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0A7FFF] via-[#0B6FE8] to-[#0D5FD1] py-8 lg:py-10">
+    <section className="relative overflow-hidden bg-linear-to-br from-[#0A7FFF] via-[#0B6FE8] to-[#0D5FD1] py-12 sm:py-16 lg:py-20">
       {/* Grid Background Pattern */}
       <div
         className="absolute inset-0 opacity-40"
@@ -65,7 +65,7 @@ export default function PartnershipsHeroSection() {
         </svg>
       </div>
 
-      <div className="relative container mx-auto px-6 lg:px-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
