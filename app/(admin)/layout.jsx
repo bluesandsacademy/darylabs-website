@@ -33,7 +33,7 @@ export default function AdminBlogLayout({ children }) {
           {/* Mobile sidebar overlay */}
           {sidebarOpen && (
             <div
-              className="fixed inset-0 bg-black/50 z-20 lg:hidden"
+              className="fixed inset-0 bg-black/20 backdrop-blur-md z-20 lg:hidden"
               onClick={() => setSidebarOpen(false)}
             />
           )}
