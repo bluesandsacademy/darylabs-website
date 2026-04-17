@@ -10,8 +10,8 @@ export default function AdminSidebar({ sidebarOpen, setSidebarOpen }) {
 
   const menuItems = [
     {
-      name: "Home Page",
-      href: "/admin",
+      name: "Blog Management",
+      href: "/admin/blog",
       icon: (
         <svg
           className="w-5 h-5"
@@ -24,25 +24,6 @@ export default function AdminSidebar({ sidebarOpen, setSidebarOpen }) {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "Admin Support",
-      href: "/admin/support",
-      icon: (
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
           />
         </svg>
       ),
@@ -62,6 +43,46 @@ export default function AdminSidebar({ sidebarOpen, setSidebarOpen }) {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "Home Page",
+      href: "/admin",
+      disabled: true,
+      icon: (
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: "Admin Support",
+      href: "/admin/support",
+      disabled: true,
+      icon: (
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
           />
         </svg>
       ),
@@ -90,6 +111,18 @@ export default function AdminSidebar({ sidebarOpen, setSidebarOpen }) {
           <nav className="flex-1 px-4 py-6 space-y-1">
             {menuItems.map((item) => {
               const isActive = pathname === item.href;
+              if (item.disabled) {
+                return (
+                  <span
+                    key={item.name}
+                    title="Coming soon"
+                    className="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg opacity-40 cursor-not-allowed text-gray-500 select-none"
+                  >
+                    {item.icon}
+                    <span>{item.name}</span>
+                  </span>
+                );
+              }
               return (
                 <Link
                   key={item.name}

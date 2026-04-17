@@ -36,7 +36,7 @@ export default function Sidebar({ isOpen = true, onClose }) {
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="md:hidden min-h-screen fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="md:hidden min-h-screen fixed inset-0 bg-black/20 backdrop-blur-md z-40"
           onClick={onClose}
         />
       )}
@@ -67,76 +67,120 @@ export default function Sidebar({ isOpen = true, onClose }) {
 
         <div className="flex flex-col gap-y-3 w-full">
           {user?.role === "schoolAdmin" || user?.role === "SchoolAdmin"
-            ? sideNavLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
-                    pathname === link.url ? "bg-blue-950 text-white" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                  onClick={onClose}
-                >
-                  <img
-                    src={link.icon}
-                    alt={link.title}
-                    className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
-                  />
-                  {link.title}
-                </Link>
-              ))
+            ? sideNavLinks.map((link, index) =>
+                link.disabled ? (
+                  <span
+                    key={index}
+                    title="Coming soon"
+                    className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full opacity-40 cursor-not-allowed text-gray-500 select-none"
+                  >
+                    <img src={link.icon} alt={link.title} className="w-5 h-5" />
+                    {link.title}
+                  </span>
+                ) : (
+                  <Link
+                    key={index}
+                    href={link.url}
+                    className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
+                      pathname === link.url ? "bg-blue-950 text-white" : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                    onClick={onClose}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.title}
+                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
+                    />
+                    {link.title}
+                  </Link>
+                )
+              )
             : user?.role === "globalAdmin" || user?.role === "GlobalAdmin"
-            ? adminSideNavLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
-                    pathname === link.url ? "bg-[#006fcc] text-white" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                  onClick={onClose}
-                >
-                  <img
-                    src={link.icon}
-                    alt={link.title}
-                    className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
-                  />
-                  {link.title}
-                </Link>
-              ))
+            ? adminSideNavLinks.map((link, index) =>
+                link.disabled ? (
+                  <span
+                    key={index}
+                    title="Coming soon"
+                    className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full opacity-40 cursor-not-allowed text-gray-500 select-none"
+                  >
+                    <img src={link.icon} alt={link.title} className="w-5 h-5" />
+                    {link.title}
+                  </span>
+                ) : (
+                  <Link
+                    key={index}
+                    href={link.url}
+                    className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
+                      pathname === link.url ? "bg-[#006fcc] text-white" : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                    onClick={onClose}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.title}
+                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
+                    />
+                    {link.title}
+                  </Link>
+                )
+              )
             : user?.role === "teacher" || user?.role === "Teacher"
-            ? teacherSideNavLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
-                    pathname === link.url ? "bg-[#303C48] text-white" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                  onClick={onClose}
-                >
-                  <img
-                    src={link.icon}
-                    alt={link.title}
-                    className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
-                  />
-                  {link.title}
-                </Link>
-              ))
-            : sidebarLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
-                    pathname === link.url ? "bg-[#006fcc] text-white" : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                  onClick={onClose}
-                >
-                  <img
-                    src={link.icon}
-                    alt={link.title}
-                    className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : index === 0 ? "filter brightness-0" : ""}`}
-                  />
-                  {link.title}
-                </Link>
-              ))}
+            ? teacherSideNavLinks.map((link, index) =>
+                link.disabled ? (
+                  <span
+                    key={index}
+                    title="Coming soon"
+                    className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full opacity-40 cursor-not-allowed text-gray-500 select-none"
+                  >
+                    <img src={link.icon} alt={link.title} className="w-5 h-5" />
+                    {link.title}
+                  </span>
+                ) : (
+                  <Link
+                    key={index}
+                    href={link.url}
+                    className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
+                      pathname === link.url ? "bg-[#303C48] text-white" : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                    onClick={onClose}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.title}
+                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
+                    />
+                    {link.title}
+                  </Link>
+                )
+              )
+            : sidebarLinks.map((link, index) =>
+                link.disabled ? (
+                  <span
+                    key={index}
+                    title="Coming soon"
+                    className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full opacity-40 cursor-not-allowed text-gray-500 select-none"
+                  >
+                    <img src={link.icon} alt={link.title} className="w-5 h-5" />
+                    {link.title}
+                  </span>
+                ) : (
+                  <Link
+                    key={index}
+                    href={link.url}
+                    className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
+                      pathname === link.url ? "bg-[#006fcc] text-white" : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                    onClick={onClose}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.title}
+                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : index === 0 ? "filter brightness-0" : ""}`}
+                    />
+                    {link.title}
+                  </Link>
+                )
+              )}
 
           <hr className="my-2" />
 
