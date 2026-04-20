@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import QueryProvider from "@/components/QueryClientProvider";
 import { UserProvider } from "@/services/UserContext";
 import AuthGuard from "@/services/AuthGuard";
+import { AppTourProvider } from "@/app/Providers";
 
 const jarkataSans = Plus_Jakarta_Sans({
   variable: "--font-jarkata",
@@ -38,7 +39,9 @@ export default function RootLayout({ children }) {
             pauseOnHover
           />
           <UserProvider>
-            <AuthGuard>{children}</AuthGuard>
+            <AppTourProvider>
+              <AuthGuard>{children}</AuthGuard>
+            </AppTourProvider>
           </UserProvider>
           <Toaster position="top-center" />
         </QueryProvider>
