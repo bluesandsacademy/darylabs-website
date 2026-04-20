@@ -1,92 +1,72 @@
 "use client";
 
 import StatCards from "@/components/Dashboard/StatCards";
-import { AdminGeneralMetricStats, AdminLearningMetricStats, AdminUserOverviewStats } from "@/lib/data";
-import { LineChart, Line, PieChart, Pie, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from "recharts";
 
-const lineChartData = [
-  { month: "Jun", users: 150, schools: 0 },
-  { month: "Jul", users: 350, schools: 15 },
-  { month: "Aug", users: 428, schools: 15 },
-  { month: "Sep", users: 125, schools: 14 },
-  { month: "Oct", users: 200, schools: 32 },
-  { month: "Nov", users: 350, schools: 36 },
-  { month: "Dec", users: 100, schools: 8 },
+const tractionStats = [
+  { title: "Schools Reached", value: "11+", icon: "/images/icon/total_schools.svg", percentageChange: "Across Uganda", timeFrame: "" },
+  { title: "Science Learners", value: "2,000+", icon: "/images/icon/total_users.svg", percentageChange: "Science Students", timeFrame: "" },
+  { title: "Female Participation", value: "40%", icon: "/images/icon/studentgrad.svg", percentageChange: "Girls enrolled", timeFrame: "" },
+  { title: "Inclusive Access", value: "10%", icon: "/images/icon/health-walk-supported.svg", percentageChange: "PWD students", timeFrame: "" },
 ];
 
-const pieChartData = [
-  { name: "Male Students", value: 722 },
-  { name: "Female Students", value: 531 },
+const positiveOutcomes = [
+  { pct: "35%", desc: "improvement in science comprehension" },
+  { pct: "25%", desc: "increase in exam performance" },
 ];
 
-const barChartData = [
-  { month: "Jun", revenue: 2690000 },
-  { month: "Jul", revenue: 2950000 },
-  { month: "Aug", revenue: 3680000 },
-  { month: "Sep", revenue: 4440000 },
-  { month: "Oct", revenue: 5650000 },
+const keyPartnerships = [
+  "Ministry of Education & Sports (MoES)",
+  "HivoLabs",
+  "National Council for Higher Education (NCHE)",
+  "National Curriculum Development Centre (NCDC)",
+  "Education Standards Agency",
+  "Health Professional Councils",
+  "Secondary Science and Mathematics Teachers",
 ];
-
-const COLORS = ["#3b82f6", "#ec4899", "#f59e0b"];
 
 const Page = () => {
   return (
     <div className="p-2 md:p-3 lg:p-4 flex flex-col gap-3 lg:gap-5">
-      <div className="flex flex-col gap-1">
-        <p className="text-xs">General metrics</p>
-        <StatCards stats={AdminGeneralMetricStats} />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs">Learning metrics</p>
-        <StatCards stats={AdminLearningMetricStats} />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs">User Status Overview</p>
-        <StatCards stats={AdminUserOverviewStats} />
+
+      {/* Header */}
+      <div className="bg-white rounded-md p-3 md:p-4 shadow-sm flex flex-col gap-0.5">
+        <p className="font-semibold text-blue-950 lg:text-lg">Platform Overview</p>
+        <p className="text-xs text-slate-500">Traction and impact metrics — Uganda</p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4">
-        <div className="flex-1 bg-white p-4 rounded-lg shadow">
-          <h3 className="text-sm font-semibold mb-4">User Growth</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={lineChartData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-              <YAxis tick={{ fontSize: 12 }} />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="users" stroke="#3b82f6" strokeWidth={2} dot={{ r: 4 }} />
-              <Line type="monotone" dataKey="schools" stroke="#8b5cf6" strokeWidth={2} dot={{ r: 4 }} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="flex-1 bg-white p-4 rounded-lg shadow">
-          <h3 className="text-sm font-semibold mb-4">User Status Distribution</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie data={pieChartData} cx="50%" cy="50%" labelLine={false} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`} outerRadius={80} innerRadius={50} dataKey="value">
-                {pieChartData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
+      {/* Headline stats */}
+      <StatCards stats={tractionStats} />
 
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1 bg-white p-4 rounded-lg shadow">
-          <h3 className="text-sm font-semibold mb-4">Revenue Growth</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={barChartData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-              <YAxis tick={{ fontSize: 12 }} />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="revenue" fill="#3b82f6" />
-            </BarChart>
-          </ResponsiveContainer>
+      {/* Outcomes & Partnerships */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5">
+
+        <div className="bg-white rounded-md shadow-sm p-4 flex flex-col gap-3">
+          <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+            <p className="font-semibold text-blue-950 text-sm">Positive Outcomes</p>
+            <span className="text-xs text-slate-400">Active schools — offline lab packs</span>
+          </div>
+          {positiveOutcomes.map((o) => (
+            <div key={o.pct} className="flex items-center gap-3">
+              <span className="text-sm font-bold text-bgBlue bg-blue-50 border border-blue-100 rounded-md px-3 py-2 min-w-14 text-center shrink-0">
+                {o.pct}
+              </span>
+              <p className="text-sm text-gray-600">{o.desc}</p>
+            </div>
+          ))}
         </div>
+
+        <div className="bg-white rounded-md shadow-sm p-4 flex flex-col gap-3">
+          <p className="font-semibold text-blue-950 text-sm border-b border-gray-100 pb-2">Key Partnerships</p>
+          <ul className="flex flex-col gap-0">
+            {keyPartnerships.map((p) => (
+              <li key={p} className="flex items-center gap-3 py-2 border-b border-gray-50 last:border-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-bgBlue shrink-0" />
+                <span className="text-sm text-gray-600">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
     </div>
   );
