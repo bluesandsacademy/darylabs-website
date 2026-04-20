@@ -118,7 +118,13 @@ export default function Sidebar({ isOpen = true, onClose }) {
                     <img
                       src={link.icon}
                       alt={link.title}
-                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
+                      className={`w-5 h-5 ${
+                        pathname === link.url
+                          ? "filter brightness-0 invert"
+                          : index === 0
+                          ? "filter brightness-0"
+                          : ""
+                      }`}
                     />
                     {link.title}
                   </Link>
@@ -147,7 +153,13 @@ export default function Sidebar({ isOpen = true, onClose }) {
                     <img
                       src={link.icon}
                       alt={link.title}
-                      className={`w-5 h-5 ${pathname === link.url ? "filter brightness-0 invert" : ""}`}
+                      className={`w-5 h-5 ${
+                        pathname === link.url
+                          ? "filter brightness-0 invert"
+                          : index === 0
+                          ? "filter brightness-0"
+                          : ""
+                      }`}
                     />
                     {link.title}
                   </Link>
@@ -184,44 +196,48 @@ export default function Sidebar({ isOpen = true, onClose }) {
 
           <hr className="my-2" />
 
-          <Link
-            href={
-              user?.role === "schoolAdmin" || user?.role === "SchoolAdmin"
-                ? "/school/dashboard/contact-support"
-                : user?.role === "teacher" || user?.role === "Teacher"
-                ? "/teacher/dashboard/contact-support"
-                : user?.role === "globalAdmin" || user?.role === "GlobalAdmin"
-                ? "/admin/dashboard/customer-support"
-                : "/dashboard/support"
-            }
-            className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
-              pathname === "/dashboard/support" ? "bg-[#006fcc] text-white"
-              : pathname === "/school/dashboard/contact-support" ? "bg-blue-950 text-white"
-              : pathname === "/teacher/dashboard/contact-support" ? "bg-[#303C48] text-white"
-              : pathname === "/admin/dashboard/customer-support" ? "bg-[#006fcc] text-white"
-              : ""
-            }`}
-          >
-            <img
-              src="/images/icon/ic_sharp-support-agent.svg"
-              alt="support-agent"
-              className={`w-5 h-5 ${
-                pathname === "/dashboard/support" ||
-                pathname === "/school/dashboard/contact-support" ||
-                pathname === "/teacher/dashboard/contact-support" ||
-                pathname === "/admin/dashboard/customer-support"
-                  ? "filter brightness-0 invert"
-                  : ""
+          {user?.role === "schoolAdmin" || user?.role === "SchoolAdmin" || user?.role === "globalAdmin" || user?.role === "GlobalAdmin" ? (
+            <Link
+              href={
+                user?.role === "schoolAdmin" || user?.role === "SchoolAdmin"
+                  ? "/school/dashboard/contact-support"
+                  : "/admin/dashboard/customer-support"
+              }
+              className={`flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full ${
+                pathname === "/school/dashboard/contact-support" ? "bg-blue-950 text-white"
+                : pathname === "/admin/dashboard/customer-support" ? "bg-[#006fcc] text-white"
+                : ""
               }`}
-            />
-            <p>
-              {user?.role === "schoolAdmin" || user?.role === "SchoolAdmin"
-                ? "Contact Support"
-                : user?.role === "globalAdmin" || user?.role === "GlobalAdmin"
-                ? "Customer Support"
-                : "Admin Support"}
-            </p>
-          </Link>
+            >
+              <img
+                src="/images/icon/ic_sharp-support-agent.svg"
+                alt="support-agent"
+                className={`w-5 h-5 ${
+                  pathname === "/school/dashboard/contact-support" ||
+                  pathname === "/admin/dashboard/customer-support"
+                    ? "filter brightness-0 invert"
+                    : ""
+                }`}
+              />
+              <p>
+                {user?.role === "schoolAdmin" || user?.role === "SchoolAdmin"
+                  ? "Contact Support"
+                  : "Customer Support"}
+              </p>
+            </Link>
+          ) : (
+            <span
+              title="Coming soon"
+              className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-2 rounded-md w-full opacity-40 cursor-not-allowed text-gray-500 select-none"
+            >
+              <img
+                src="/images/icon/ic_sharp-support-agent.svg"
+                alt="support-agent"
+                className="w-5 h-5"
+              />
+              <p>Admin Support</p>
+            </span>
+          )}
 
           <button
             className="flex items-center text-sm md:text-[0.85rem] gap-x-3 px-3 py-3 rounded-md w-full"

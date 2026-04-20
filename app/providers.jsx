@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import formbricks from "@formbricks/js";
+import { TourProvider } from "@reactour/tour";
 
 export function FormbricksProvider({ children }) {
   useEffect(() => {
@@ -14,4 +15,24 @@ export function FormbricksProvider({ children }) {
   }, []);
 
   return <>{children}</>;
+}
+
+export function AppTourProvider({ children }) {
+  const [steps, setSteps] = useState([]);
+
+  return (
+    <TourProvider
+      steps={steps}
+      styles={{
+        popover: (base) => ({
+          ...base,
+          borderRadius: "12px",
+          padding: "20px",
+          paddingTop: "40px",
+        }),
+      }}
+    >
+      {children}
+    </TourProvider>
+  );
 }
